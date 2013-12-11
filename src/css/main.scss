@@ -1,0 +1,39 @@
+@import '_base';
+
+.gi_container {
+    font-family: monospace;
+    background: #000;
+    color: #fff;
+    font-size: 14px;
+    line-height: 16px;
+    padding: 10px;
+
+
+    .scene_text {
+        padding: 20px;
+    }
+
+    button {
+        font-family: monospace;
+        border: 1px solid #fff;
+        background-color: #000;
+        color: #fff;
+        cursor: pointer;
+        font-size: 14px;
+        padding: 6px 20px;
+
+
+    }
+
+    button:hover {
+        background: #fff;
+        color: #000;
+    }
+
+    .outcomes {
+        background: #222;
+        font-size: 11px;
+        color: #CCC;
+        line-height: 1em;
+    }
+}
