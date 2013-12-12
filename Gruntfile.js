@@ -1,5 +1,4 @@
 module.exports = function(grunt) {
-
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
@@ -19,6 +18,10 @@ module.exports = function(grunt) {
             html: {
                 files: ['src/*.html'],
                 tasks: ['copy:html']
+            },
+            views: {
+                files: ['src/views/*.mustache'],
+                tasks: ['mustache']
             }
         },
 
@@ -61,6 +64,18 @@ module.exports = function(grunt) {
             all: ['Gruntfile.js', 'src/js/*.js', 'src/js/app/**/*.js']
         },
 
+        mustache: {
+            files : {
+                src: 'src/views/',
+                dest: 'dist/js/views.js',
+                options: {
+                    prefix: 'var JOURNEY = JOURNEY || {}; JOURNEY.views = ',
+                    postfix: ';',
+                    verbose: true
+                }
+            }
+        },
+
         connect: {
             server: {
                 options: {
@@ -83,10 +98,11 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-sass');
+    grunt.loadNpmTasks('grunt-mustache');
 
     // Tasks
     grunt.registerTask('js', ['jshint', 'copy:js']);
-    grunt.registerTask('build', ['clean', 'jshint', 'sass', 'copy', 'js']);
+    grunt.registerTask('build', ['clean', 'jshint', 'sass', 'copy', 'js', 'mustache']);
     grunt.registerTask('default', ['build', 'connect', 'watch']);
 
 };

@@ -8,9 +8,18 @@ body {
   color: white;
   font-size: 14px;
   line-height: 16px;
-  padding: 10px; }
+  padding: 10px;
+  position: relative; }
+  .gi_container .scene_container {
+    padding: 10px;
+    min-height: 400px; }
+    .gi_container .scene_container video {
+      width: 100%; }
   .gi_container .scene_text {
-    padding: 20px; }
+    padding: 20px;
+    background-color: #887733;
+    margin: 0;
+    margin-top: 10px; }
   .gi_container button {
     font-family: monospace;
     border: 1px solid white;
@@ -27,3 +36,17 @@ body {
     font-size: 11px;
     color: #cccccc;
     line-height: 1em; }
+  .gi_container .cost, .gi_container .days {
+    font-size: 10px;
+    position: absolute;
+    margin: 0;
+    padding: 0; }
+  .gi_container .cost {
+    top: 5px;
+    right: 10px; }
+  .gi_container .days {
+    top: 5px;
+    left: 10px; }
+  .gi_container .updated {
+    font-weight: bold;
+    color: yellow; }

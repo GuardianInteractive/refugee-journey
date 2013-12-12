@@ -7,10 +7,23 @@
     font-size: 14px;
     line-height: 16px;
     padding: 10px;
+    position: relative;
+
+    .scene_container {
+        padding: 10px;
+        min-height: 400px;
+
+        video {
+            width: 100%;
+        }
+    }
 
 
     .scene_text {
         padding: 20px;
+        background-color: #873;
+        margin: 0;
+        margin-top: 10px;
     }
 
     button {
@@ -21,8 +34,6 @@
         cursor: pointer;
         font-size: 14px;
         padding: 6px 20px;
-
-
     }
 
     button:hover {
@@ -35,5 +46,28 @@
         font-size: 11px;
         color: #CCC;
         line-height: 1em;
+    }
+
+    .cost,
+    .days {
+        font-size: 10px;
+        position: absolute;
+        margin: 0;
+        padding: 0;
+    }
+
+    .cost {
+        top: 5px;
+        right: 10px;
+    }
+
+    .days {
+        top: 5px;
+        left: 10px;
+    }
+
+    .updated {
+        font-weight: bold;
+        color: #FF0;
     }
 }

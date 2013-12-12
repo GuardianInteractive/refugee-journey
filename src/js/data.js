@@ -3,6 +3,7 @@ JOURNEY.data = {
     start: {
         title: 'Your story begins',
         text: 'You are a Syrian refugee',
+        asset: 'start',
         choice: {
             text: 'Land or air?',
             options: [
@@ -28,6 +29,7 @@ JOURNEY.data = {
     buyPassport: {
         title: 'Need a passport',
         text: 'You need a passport. ',
+        asset: 'passport',
         days: 33,
         choice: {
             text: 'Buy a cheap low quality or an expensive high quality passport?',
@@ -67,6 +69,7 @@ JOURNEY.data = {
     travelByAir: {
         title: 'Travelling by air',
         text: 'You need a false passport.',
+        asset: 'airport',
         days: 8,
         cost: 500,
         choice: {
@@ -112,7 +115,7 @@ JOURNEY.data = {
     },
 
     turnedAway: {
-        title: 'Into Greece',
+        title: 'Beaten up',
         text: 'You get beaten up',
         success: false,
         end: true

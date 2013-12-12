@@ -5,6 +5,8 @@ JOURNEY.Game = function(el) {
     var container = el;
     var scenes = JOURNEY.data;
     var debug = true;
+    var sceneContainerEl;
+    var sceneContentEl;
     var textboxEl;
     var choiceEl;
     var choiceTextEl;
@@ -13,11 +15,10 @@ JOURNEY.Game = function(el) {
     var costValueEl;
     var daysEl;
     var daysValueEl;
-    var player;
 
     var currentScene = 'start';
     var buttonContainer;
-    var buttons = [];
+    var player;
 
     var previousPlaythroughs = [];
 
@@ -33,120 +34,99 @@ JOURNEY.Game = function(el) {
     }
 
     function setupDOM() {
-        container.classList.add('gi_container');
-
-        textboxEl = document.createElement('p');
-        textboxEl.classList.add('scene_text');
-        container.appendChild(textboxEl);
+        container.innerHTML = JOURNEY.views.base_layout;
+        sceneContainerEl = $('.scene_container', container);
+        sceneContentEl = $('.scene_content', container);
+        textboxEl = $('.scene_text', container);
+        choiceTextEl = $('.choice_text', container);
+        costValueEl = $('.cost_value', container);
+        daysValueEl = $('.days_value', container);
+        buttonContainer = $('.button_container', container);
+        outcomesEl = $('.debug_output', container);
 
         choiceEl = document.createElement('button');
         choiceEl.classList.add('choice_btn');
-        choiceEl.innerHTML  = 'choice button';
-
-        choiceTextEl = document.createElement('p');
-        choiceTextEl.classList.add('choice_text');
-        container.appendChild(choiceTextEl);
-
-        costEl = document.createElement('p');
-        costEl.classList.add('cost');
-        costEl.innerHTML = 'Cost: ';
-        costValueEl = document.createElement('span');
-        costEl.appendChild(costValueEl);
-        container.appendChild(costEl);
-
-        daysEl = document.createElement('p');
-        daysEl.classList.add('days');
-        daysEl.innerHTML = 'Days: ';
-        daysValueEl = document.createElement('span');
-        daysEl.appendChild(daysValueEl);
-        container.appendChild(daysEl);
 
 
-        buttonContainer = document.createElement('div');
-        buttonContainer.classList.add('choice_container');
-        container.appendChild(buttonContainer);
-
-
-        outcomesEl = document.createElement('div');
-        outcomesEl.classList.add('outcomes');
-        container.appendChild(outcomesEl);
     }
 
     function render() {
         var scene = scenes[currentScene];
-        console.log(scene);
+
+        if (currentScene === 'start') {
+            costValueEl.text(0);
+            daysValueEl.text(0);
+            player = new Player();
+        }
 
         if (scene.logic) {
-            if (scene.requireItem === 'passport') {
-                currentScene = (isPassportValid()) ? scene.outcomes.good.destination : scene.outcomes.bad.destination;
+            if ('passport' === scene.requireItem) {
+                if (true === isPassportValid()) currentScene = scene.outcomes.good.destination;
+                else currentScene = scene.outcomes.bad.destination;
             }
             return render();
         }
 
+        sceneContainerEl.css('background', 'none');
+        sceneContentEl.empty();
+        textboxEl.text(scene.text);
+        choiceTextEl.text('');
+        buttonContainer.empty();
 
-        textboxEl.innerHTML = scene.text;
-        buttons.map(removeElement);
-        buttons = [];
-        choiceTextEl.innerHTML = '';
+        if (scene.asset) {
+            sceneContentEl.html(JOURNEY.assets[scene.asset].html);
+            sceneContainerEl.css('background-image', 'url(' + JOURNEY.assets[scene.asset].img + ')');
+        }
 
         if (scene.choice) {
-            if (scene.choice.text) {
-                choiceTextEl.innerHTML = '> ' + scene.choice.text;
-            }
-            scene.choice.options.forEach(addChoiceBtn);
+            if (scene.choice.text)
+                choiceTextEl.text('> ' + scene.choice.text);
+
+            addChoiceBtns(scene.choice.options);
         } else if (scene.end === true) {
             player.success = scene.success;
-            addEndButton();
+            previousPlaythroughs.push(player);
+            addChoiceBtn('Start again', 'start');
         }
 
         if (scene.item) {
             player.items.push(scene.item);
         }
 
-        player.dayCount += (scene.days) ? scene.days : 0;
-        player.finance += (scene.cost) ? scene.cost : 0;
+        if (scene.days && scene.days > 0) {
+            player.dayCount += scene.days;
+            daysValueEl.text(player.dayCount);
+            daysValueEl.addClass('updated');
+            setTimeout(function() {
+                daysValueEl.removeClass('updated');
+            }, 700);
+        }
 
-        daysValueEl.innerHTML = player.dayCount;
-        costValueEl.innerHTML = player.finance;
+
+        if (scene.cost && scene.cost > 0) {
+            player.finance += scene.cost;
+            costValueEl.text(player.finance);
+            costValueEl.addClass('updated');
+            setTimeout(function() {
+                costValueEl.removeClass('updated');
+            }, 700);
+
+        }
 
         updatePlayer();
-
-        if (debug) console.log(player);
+        //if (debug) console.log(player);
     }
 
     function isPassportValid() {
-        if (-1 !== player.items.indexOf('cheepPassport')) {
+        if (-1 !== player.items.indexOf('cheepPassport'))
             return Math.random() < 0.5;
-        }
 
-        if (-1 !== player.items.indexOf('expensivePassport')) {
+        if (-1 !== player.items.indexOf('expensivePassport'))
             return Math.random() < 0.90;
-        }
 
         return false;
     }
 
-    function addEndButton() {
-        var btnEL = choiceEl.cloneNode(false);
-        btnEL.innerHTML = 'Start again';
-        btnEL.addEventListener('click', newGame, false);
-        buttonContainer.appendChild(btnEL);
-        buttons.push(btnEL);
-    }
-
-    function removeElement(el) {
-        el.parentNode.removeChild(el);
-    }
-
-    function newGame() {
-        previousPlaythroughs.push(player);
-        player = new Player();
-        currentScene = 'start';
-        costValueEl.innerHTML = 0;
-        daysValueEl.innerHTML = 0;
-        outputOutcomes();
-        render();
-    }
 
     function outputOutcomes() {
         outcomesEl.innerHTML = '';
@@ -195,14 +175,18 @@ JOURNEY.Game = function(el) {
         player.scenes.push(currentScene);
     }
 
-    function addChoiceBtn(choiceData) {
-        var btnEL = choiceEl.cloneNode(false);
-        btnEL.innerHTML = choiceData.text;
-        btnEL.addEventListener('click', function() {
-            clickedChoice(choiceData.destination);
-        }, false);
-        buttonContainer.appendChild(btnEL);
-        buttons.push(btnEL);
+    function addChoiceBtns(options) {
+        options.map(function(option) {
+            addChoiceBtn(option.text, option.destination);
+        });
+    }
+
+    function addChoiceBtn(text, destination) {
+        var btnEL = $('<button></button>').text(text);
+        btnEL.on('click',function() {
+            clickedChoice(destination);
+        });
+        buttonContainer.append(btnEL);
     }
 
     function clickedChoice(dest) {
