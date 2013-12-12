@@ -20,7 +20,7 @@ module.exports = function(grunt) {
                 tasks: ['copy:html']
             },
             views: {
-                files: ['src/views/*.mustache'],
+                files: ['src/html/*.mustache'],
                 tasks: ['mustache']
             }
         },
@@ -66,10 +66,10 @@ module.exports = function(grunt) {
 
         mustache: {
             files : {
-                src: 'src/views/',
-                dest: 'dist/js/views.js',
+                src: 'src/html/',
+                dest: 'dist/js/html.js',
                 options: {
-                    prefix: 'var JOURNEY = JOURNEY || {}; JOURNEY.views = ',
+                    prefix: 'var JOURNEY = JOURNEY || {}; JOURNEY.html = ',
                     postfix: ';',
                     verbose: true
                 }

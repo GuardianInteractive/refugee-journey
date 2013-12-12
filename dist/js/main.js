@@ -34,7 +34,7 @@ JOURNEY.Game = function(el) {
     }
 
     function setupDOM() {
-        container.innerHTML = JOURNEY.views.base_layout;
+        container.innerHTML = JOURNEY.html.base_layout;
         sceneContainerEl = $('.scene_container', container);
         sceneContentEl = $('.scene_content', container);
         textboxEl = $('.scene_text', container);
@@ -46,8 +46,6 @@ JOURNEY.Game = function(el) {
 
         choiceEl = document.createElement('button');
         choiceEl.classList.add('choice_btn');
-
-
     }
 
     function render() {
@@ -87,6 +85,7 @@ JOURNEY.Game = function(el) {
             player.success = scene.success;
             previousPlaythroughs.push(player);
             addChoiceBtn('Start again', 'start');
+            testimonies();
         }
 
         if (scene.item) {
@@ -115,6 +114,10 @@ JOURNEY.Game = function(el) {
 
         updatePlayer();
         //if (debug) console.log(player);
+    }
+
+    function testimonies() {
+        console.log(player.scenes);
     }
 
     function isPassportValid() {
