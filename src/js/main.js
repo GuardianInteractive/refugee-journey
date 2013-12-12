@@ -9,13 +9,28 @@ JOURNEY.Game = function(el) {
     var choiceEl;
     var choiceTextEl;
     var outcomesEl;
-    var player = {
-        currentPlaythough: [],
-        playthoughs: []
-    };
-    var currentScene = 'scene1';
+    var costEl;
+    var costValueEl;
+    var daysEl;
+    var daysValueEl;
+    var player;
+
+    var currentScene = 'start';
     var buttonContainer;
     var buttons = [];
+
+    var previousPlaythroughs = [];
+
+    function Player() {
+        return {
+            dayCount: 0,
+            finance: 0,
+            childAlive: true,
+            scenes: [],
+            items: [],
+            success: null
+        };
+    }
 
     function setupDOM() {
         container.classList.add('gi_container');
@@ -32,6 +47,20 @@ JOURNEY.Game = function(el) {
         choiceTextEl.classList.add('choice_text');
         container.appendChild(choiceTextEl);
 
+        costEl = document.createElement('p');
+        costEl.classList.add('cost');
+        costEl.innerHTML = 'Cost: ';
+        costValueEl = document.createElement('span');
+        costEl.appendChild(costValueEl);
+        container.appendChild(costEl);
+
+        daysEl = document.createElement('p');
+        daysEl.classList.add('days');
+        daysEl.innerHTML = 'Days: ';
+        daysValueEl = document.createElement('span');
+        daysEl.appendChild(daysValueEl);
+        container.appendChild(daysEl);
+
 
         buttonContainer = document.createElement('div');
         buttonContainer.classList.add('choice_container');
@@ -44,22 +73,57 @@ JOURNEY.Game = function(el) {
     }
 
     function render() {
-        textboxEl.style.backgroundColor = scenes[currentScene].color;
-        textboxEl.innerHTML = scenes[currentScene].text;
+        var scene = scenes[currentScene];
+        console.log(scene);
+
+        if (scene.logic) {
+            if (scene.requireItem === 'passport') {
+                currentScene = (isPassportValid()) ? scene.outcomes.good.destination : scene.outcomes.bad.destination;
+            }
+            return render();
+        }
+
+
+        textboxEl.innerHTML = scene.text;
         buttons.map(removeElement);
         buttons = [];
         choiceTextEl.innerHTML = '';
 
-        if (scenes[currentScene].choice) {
-            if (scenes[currentScene].choice.text) {
-                choiceTextEl.innerHTML = '> ' + scenes[currentScene].choice.text;
+        if (scene.choice) {
+            if (scene.choice.text) {
+                choiceTextEl.innerHTML = '> ' + scene.choice.text;
             }
-            scenes[currentScene].choice.options.forEach(addChoiceBtn);
-        } else if (scenes[currentScene].end === true) {
+            scene.choice.options.forEach(addChoiceBtn);
+        } else if (scene.end === true) {
+            player.success = scene.success;
             addEndButton();
         }
 
+        if (scene.item) {
+            player.items.push(scene.item);
+        }
+
+        player.dayCount += (scene.days) ? scene.days : 0;
+        player.finance += (scene.cost) ? scene.cost : 0;
+
+        daysValueEl.innerHTML = player.dayCount;
+        costValueEl.innerHTML = player.finance;
+
+        updatePlayer();
+
         if (debug) console.log(player);
+    }
+
+    function isPassportValid() {
+        if (-1 !== player.items.indexOf('cheepPassport')) {
+            return Math.random() < 0.5;
+        }
+
+        if (-1 !== player.items.indexOf('expensivePassport')) {
+            return Math.random() < 0.90;
+        }
+
+        return false;
     }
 
     function addEndButton() {
@@ -75,49 +139,80 @@ JOURNEY.Game = function(el) {
     }
 
     function newGame() {
-        player.playthoughs.push(player.currentPlaythough);
-        player.currentPlaythough = [];
-        currentScene = 'scene1';
+        previousPlaythroughs.push(player);
+        player = new Player();
+        currentScene = 'start';
+        costValueEl.innerHTML = 0;
+        daysValueEl.innerHTML = 0;
         outputOutcomes();
         render();
     }
 
     function outputOutcomes() {
         outcomesEl.innerHTML = '';
-        player.playthoughs.forEach(function(playthough, index) {
+        previousPlaythroughs.forEach(function(playthough, index) {
             var count = document.createElement('p');
             count.innerHTML += 'Play count: ' + (index + 1);
-            var list = document.createElement('ol');
-            playthough.forEach(function(scene) {
-                var item = document.createElement('li');
-                item.innerHTML = scenes[scene].title;
-                list.appendChild(item);
+
+            var cost = document.createElement('p');
+            cost.innerHTML += 'Cost count: ' + playthough.finance;
+
+            var days = document.createElement('p');
+            days.innerHTML += 'Day count: ' + playthough.dayCount;
+
+            var scenelist = document.createElement('ol');
+            playthough.scenes.forEach(function(scene) {
+                if (scenes[scene].title) {
+                    var itemEl = document.createElement('li');
+                    itemEl.innerHTML = scenes[scene].title;
+                    scenelist.appendChild(itemEl);
+                }
             });
+
+            var items = document.createElement('p');
+            items.innerHTML = 'Items:';
+            var itemlist = document.createElement('ul');
+            playthough.items.forEach(function(item) {
+                var itemEl = document.createElement('li');
+                itemEl.innerHTML = item;
+                itemlist.appendChild(itemEl);
+            });
+
+            var success = document.createElement('p');
+            success.innerHTML += 'success: ' + playthough.success;
+
             outcomesEl.appendChild(count);
-            outcomesEl.appendChild(list);
+            outcomesEl.appendChild(success);
+            outcomesEl.appendChild(cost);
+            outcomesEl.appendChild(days);
+            outcomesEl.appendChild(items);
+            outcomesEl.appendChild(itemlist);
+            outcomesEl.appendChild(scenelist);
         });
     }
 
     function updatePlayer() {
-        player.currentPlaythough.push(currentScene);
+        player.scenes.push(currentScene);
     }
 
     function addChoiceBtn(choiceData) {
         var btnEL = choiceEl.cloneNode(false);
         btnEL.innerHTML = choiceData.text;
-        btnEL.addEventListener('click', function() { clickedChoice(choiceData.destination);}, false);
+        btnEL.addEventListener('click', function() {
+            clickedChoice(choiceData.destination);
+        }, false);
         buttonContainer.appendChild(btnEL);
         buttons.push(btnEL);
     }
 
     function clickedChoice(dest) {
         currentScene = dest;
-        updatePlayer();
         render();
     }
 
 
     function init() {
+        player = new Player();
         setupDOM();
         render();
     }
