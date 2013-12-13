@@ -1,6 +1,7 @@
 {
   "name": "antarctica",
   "version": "0.0.1",
+  "remotePath": "http://interactive-guim-path/something/",
   "devDependencies": {
     "grunt": "~0.4.2",
     "grunt-contrib-jshint": "~0.7.2",
@@ -10,6 +11,10 @@
     "grunt-contrib-copy": "~0.4.1",
     "grunt-contrib-jst": "~0.5.1",
     "grunt-mustache": "~0.1.5",
-    "grunt-contrib-clean": "~0.5.0"
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-usemin": "~2.0.2",
+    "grunt-contrib-uglify": "~0.2.7",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-replace": "~0.5.1"
   }
 }

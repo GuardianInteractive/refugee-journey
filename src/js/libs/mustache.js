@@ -11,11 +11,7 @@
   } else {
     var mustache = {};
     factory(mustache);
-    if (typeof define === "function" && define.amd) {
-      define(mustache); // AMD
-    } else {
-      root.Mustache = mustache; // <script>
-    }
+    root.Mustache = mustache;
   }
 }(this, function (mustache) {
 

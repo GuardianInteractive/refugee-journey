@@ -1,4 +1,7 @@
 module.exports = function(grunt) {
+    grunt.option('prod', false);
+    var isDev = grunt.option('no-prod');
+
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
@@ -44,14 +47,6 @@ module.exports = function(grunt) {
                 expand: true
             },
 
-            js: {
-                src: '**/*',
-                dest: 'dist/js/',
-                flatten: false,
-                expand: true,
-                cwd: 'src/js/'
-            },
-
             imgs: {
                 src: 'src/imgs/*',
                 dest: 'dist/imgs/',
@@ -67,12 +62,30 @@ module.exports = function(grunt) {
         mustache: {
             files : {
                 src: 'src/html/',
-                dest: 'dist/js/html.js',
+                dest: 'src/js/app/html.js',
                 options: {
                     prefix: 'var JOURNEY = JOURNEY || {}; JOURNEY.html = ',
                     postfix: ';',
                     verbose: true
                 }
+            }
+        },
+
+        replace: {
+            options: {
+                patterns: [{
+                    match: 'path',
+                    replacement: (isDev) ? '' : '<%= pkg.remotePath %>',
+                    expression: false   // simple variable lookup
+                }]
+            },
+            code: {
+                files: [{
+                    expand: true,
+                    flatten: true,
+                    src: ['src/js/boot.js'],
+                    dest: 'dist/'
+                }]
             }
         },
 
@@ -87,8 +100,14 @@ module.exports = function(grunt) {
             }
         },
 
-        clean: ['dist']
+        useminPrepare: {
+            html: 'src/index.html'
+        },
+        usemin: {
+            html: 'dist/index.html'
+        },
 
+        clean: ['dist']
     });
 
     // Loads
@@ -97,12 +116,15 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-connect');
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-usemin');
+    grunt.loadNpmTasks('grunt-replace');
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-mustache');
 
     // Tasks
-    grunt.registerTask('js', ['jshint', 'copy:js']);
-    grunt.registerTask('build', ['clean', 'jshint', 'sass', 'copy', 'js', 'mustache']);
+    grunt.registerTask('js', [ 'mustache', 'jshint', 'useminPrepare', 'concat', 'uglify', 'replace']);
+    grunt.registerTask('build', ['clean', 'jshint', 'sass', 'copy', 'js', 'usemin']);
     grunt.registerTask('default', ['build', 'connect', 'watch']);
-
 };

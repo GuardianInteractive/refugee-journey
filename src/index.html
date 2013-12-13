@@ -10,12 +10,16 @@
 <figure class="gi-interactive" id="container"></figure>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<!-- build:js js/refugee-journey.min.js -->
 <script src="js/libs/mustache.js"></script>
-<script src="js/html.js"></script>
-<script src="js/testimonies.js"></script>
-<script src="js/assets.js"></script>
-<script src="js/data.js"></script>
-<script src="js/main.js"></script>
+<script src="js/app/html.js"></script>
+<script src="js/app/testimonies.js"></script>
+<script src="js/app/assets.js"></script>
+<script src="js/app/data.js"></script>
+<script src="js/app/main.js"></script>
+<!-- endbuild -->
+
 <script>
     var container = document.getElementById('container');
     var game = new JOURNEY.Game(container);
