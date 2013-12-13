@@ -2,43 +2,95 @@ var JOURNEY = JOURNEY || {};
 JOURNEY.data = {
     start: {
         title: 'Your story begins',
-        text: 'You are a Syrian refugee',
+        text: 'Your name is Karima. Your are a 28-year-old Sunni woman from Aleppo, and you have two children. Your husband was killed in a mortar attack three months ago. You now realise you must, for your children’s sake, get out of Syria. Now your choices begin. If you are to leave Syria, you can choose to embark on an expensive and possibly difficult journey to seek asylum in the European Union - Sweden is a popular destination - or take the shorter journey to a refugee camp in a neighbouring country ',
         asset: 'start',
         choice: {
-            text: 'Land or air?',
+            text: 'Do you want to try to get to Sweden or take refuge across the border in Turkey?',
             options: [
-                { text: 'Land', destination: 'travelByLand'},
-                { text: 'Air', destination: 'travelByAir' }
+                { text: 'Sweden', destination: 'gotoSweden'},
+                { text: 'Turkey', destination: 'gotoTurkey' }
             ]
         }
     },
 
-    travelByLand: {
-        title: 'Travelling by land',
-        text: 'You get to Istanbul. Choose where to go next',
+    gotoSweden: {
+        title: 'Seeking refuge in Sweden',
+        text: 'Great news! Sweden has said it will welcome any refugee from Syria. Unfortunately, it will only welcome them in Sweden, so first you have to cross the 3,000 miles between here and there. The intervening countries may not be as welcoming. How would you like to travel?',
         days: 33,
         choice: {
-            text: 'Greece or Bulgaria?',
+            text: 'By land or by air?',
             options: [
-                { text: 'Greece', destination: 'scene4'},
-                { text: 'Bulgaria', destination: 'scene5' }
+                { text: 'Land', destination: 'toSwedenbyland'},
+                { text: 'Air', destination: 'toSwedenbyair' }
             ]
         }
     },
 
-    buyPassport: {
+    toSwedenbyland: {
+        title: 'Overland out of Syria',
+        text: 'Your first step is to find a people smuggler who’s willing to get you out of Syria. With your resources, and contacts, the best you can do is find someone who’ll get you as far as Istanbul. The good news is that, although the journey is long and hard, in an airless container, you do finally arrive on the outskirts of Istanbul. Your next challenge is how to continue. In the Turkish capital you find people who will offer to get you into Greece or into Bulgaria. From there you’ll be inside the EU and able to travel relatively freely all the way to Sweden. Which to choose?',
+        days: 33,
+        choice: {
+            text: 'Bulgaria or Greece',
+            options: [
+                { text: 'Bulgaria', destination: 'toBulgaria'},
+                { text: 'Greece', destination: 'toGreece' }
+            ]
+        }
+    },
+
+
+
+    toSwedenbyair: {
         title: 'Need a passport',
-        text: 'You need a passport. ',
+        text: 'The first problem you’ll encounter is that it is now impossible to get a visa, for pretty much anywhere, from Syria. So you’ll need a false passport, ideally for a country which doesn’t require a visa to enter Sweden. Assuming you lack the scruples and posess the means for this approach, and get onto a plane, you face a choice at the airport in Sweden. Do you approach the first official you see, before leaving the airport, and admit that your papers are invalid, or do you try to get out into the city before continuing your quest for asylum?',
         asset: 'passport',
         days: 33,
         choice: {
-            text: 'Buy a cheap low quality or an expensive high quality passport?',
+            text: 'Come clean or keep quiet?',
             options: [
-                { text: 'Cheap and low quality', destination: 'cheapPassport'},
-                { text: 'Expensive and high quality', destination: 'expensivePassport' }
+                { text: 'Come clean', destination: 'comeclean'},
+                { text: 'Keep quiet', destination: 'keepquiet' }
             ]
         }
     },
+
+
+    comeclean: {
+        title: 'Owning up to false documents in Stockholm Airport',
+        text: 'Safe at last! International treaties guarantee you asylum if you approach the receiving authority at the earliest opportunity. What you had to do to get here is irrelevant. Enjoy your new life in Sweden.',
+        success: true,
+        end: true
+                
+    },
+
+    comeclean: {
+        title: 'Through passport control in Stockholm',
+        text: 'After a couple of days finding your feet in Sweden you decide to seek asylum officially. The bad news is that by knowingly entering the country using false documents you have committed a crime. The good news is that the Swedes are willing to overlook it, and grant you asylum. Who knows if a change in the political weather will mean that the next Syrian to make this mistake won’t be repatriated. ',
+        success: true,
+        end: true
+                
+    },
+
+
+
+    keepquiet: {
+        title: 'Buy cheap passport',
+        text: 'You purchase a cheap passport.',
+        days: 6,
+        cost: 300,
+        item: 'cheapPassport',
+        choice: {
+            options: [
+                { text: 'Continue on', destination: 'arriveInGreece'}
+            ]
+        }
+    },
+
+
+
+
+
 
     cheapPassport: {
         title: 'Buy cheap passport',
