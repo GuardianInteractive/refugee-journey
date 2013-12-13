@@ -4,7 +4,6 @@ JOURNEY.Game = function(el) {
 
     var container = el;
     var scenes = JOURNEY.data;
-    var debug = true;
     var sceneContainerEl;
     var sceneContentEl;
     var textboxEl;
@@ -13,8 +12,11 @@ JOURNEY.Game = function(el) {
     var outcomesEl;
     var costEl;
     var costValueEl;
+    var gameWrapperEl;
     var daysEl;
     var daysValueEl;
+    var testimonyEl;
+    var testimoniesWrapperEl;
 
     var currentScene = 'start';
     var buttonContainer;
@@ -35,6 +37,7 @@ JOURNEY.Game = function(el) {
 
     function setupDOM() {
         container.innerHTML = JOURNEY.html.base_layout;
+        gameWrapperEl = $('.game_wrapper', container);
         sceneContainerEl = $('.scene_container', container);
         sceneContentEl = $('.scene_content', container);
         textboxEl = $('.scene_text', container);
@@ -43,9 +46,21 @@ JOURNEY.Game = function(el) {
         daysValueEl = $('.days_value', container);
         buttonContainer = $('.button_container', container);
         outcomesEl = $('.debug_output', container);
+        testimoniesWrapperEl = $('.testimonies', container);
+        testimonyEl = $('.testimony_steps');
+
+        $('.testimonies_restart_btn').on('click', newGame);
 
         choiceEl = document.createElement('button');
         choiceEl.classList.add('choice_btn');
+    }
+
+    function newGame() {
+        player = new Player();
+        currentScene = 'start';
+        gameWrapperEl.show();
+        testimoniesWrapperEl.hide();
+        render();
     }
 
     function render() {
@@ -96,28 +111,37 @@ JOURNEY.Game = function(el) {
             player.dayCount += scene.days;
             daysValueEl.text(player.dayCount);
             daysValueEl.addClass('updated');
-            setTimeout(function() {
-                daysValueEl.removeClass('updated');
-            }, 700);
         }
-
 
         if (scene.cost && scene.cost > 0) {
             player.finance += scene.cost;
             costValueEl.text(player.finance);
             costValueEl.addClass('updated');
-            setTimeout(function() {
-                costValueEl.removeClass('updated');
-            }, 700);
-
         }
 
         updatePlayer();
-        //if (debug) console.log(player);
     }
 
     function testimonies() {
-        console.log(player.scenes);
+        testimonyEl.empty();
+        gameWrapperEl.hide();
+        testimoniesWrapperEl.show();
+
+        player.scenes.forEach(function(sceneName) {
+            var viewData = {
+                heading: JOURNEY.data[sceneName].title,
+                html: ''
+            };
+
+            if (JOURNEY.testimonies.hasOwnProperty(sceneName)) {
+                JOURNEY.testimonies[sceneName].map(function(html) {
+                    viewData.html += html;
+                });
+            }
+
+            var output = Mustache.render(JOURNEY.html.view_testimony, viewData);
+            testimonyEl.append(output);
+        });
     }
 
     function isPassportValid() {
@@ -128,50 +152,6 @@ JOURNEY.Game = function(el) {
             return Math.random() < 0.90;
 
         return false;
-    }
-
-
-    function outputOutcomes() {
-        outcomesEl.innerHTML = '';
-        previousPlaythroughs.forEach(function(playthough, index) {
-            var count = document.createElement('p');
-            count.innerHTML += 'Play count: ' + (index + 1);
-
-            var cost = document.createElement('p');
-            cost.innerHTML += 'Cost count: ' + playthough.finance;
-
-            var days = document.createElement('p');
-            days.innerHTML += 'Day count: ' + playthough.dayCount;
-
-            var scenelist = document.createElement('ol');
-            playthough.scenes.forEach(function(scene) {
-                if (scenes[scene].title) {
-                    var itemEl = document.createElement('li');
-                    itemEl.innerHTML = scenes[scene].title;
-                    scenelist.appendChild(itemEl);
-                }
-            });
-
-            var items = document.createElement('p');
-            items.innerHTML = 'Items:';
-            var itemlist = document.createElement('ul');
-            playthough.items.forEach(function(item) {
-                var itemEl = document.createElement('li');
-                itemEl.innerHTML = item;
-                itemlist.appendChild(itemEl);
-            });
-
-            var success = document.createElement('p');
-            success.innerHTML += 'success: ' + playthough.success;
-
-            outcomesEl.appendChild(count);
-            outcomesEl.appendChild(success);
-            outcomesEl.appendChild(cost);
-            outcomesEl.appendChild(days);
-            outcomesEl.appendChild(items);
-            outcomesEl.appendChild(itemlist);
-            outcomesEl.appendChild(scenelist);
-        });
     }
 
     function updatePlayer() {
@@ -199,9 +179,8 @@ JOURNEY.Game = function(el) {
 
 
     function init() {
-        player = new Player();
         setupDOM();
-        render();
+        newGame();
     }
 
     init();

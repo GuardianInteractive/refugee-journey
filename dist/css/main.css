@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0; }
 
-.gi_container {
+.game_wrapper {
   font-family: monospace;
   background: black;
   color: white;
@@ -10,17 +10,17 @@ body {
   line-height: 16px;
   padding: 10px;
   position: relative; }
-  .gi_container .scene_container {
+  .game_wrapper .scene_container {
     padding: 10px;
     min-height: 400px; }
-    .gi_container .scene_container video {
+    .game_wrapper .scene_container video {
       width: 100%; }
-  .gi_container .scene_text {
+  .game_wrapper .scene_text {
     padding: 20px;
     background-color: #887733;
     margin: 0;
     margin-top: 10px; }
-  .gi_container button {
+  .game_wrapper button {
     font-family: monospace;
     border: 1px solid white;
     background-color: black;
@@ -28,25 +28,25 @@ body {
     cursor: pointer;
     font-size: 14px;
     padding: 6px 20px; }
-  .gi_container button:hover {
+  .game_wrapper button:hover {
     background: white;
     color: black; }
-  .gi_container .outcomes {
+  .game_wrapper .outcomes {
     background: #222222;
     font-size: 11px;
     color: #cccccc;
     line-height: 1em; }
-  .gi_container .cost, .gi_container .days {
+  .game_wrapper .cost, .game_wrapper .days {
     font-size: 10px;
     position: absolute;
     margin: 0;
     padding: 0; }
-  .gi_container .cost {
+  .game_wrapper .cost {
     top: 5px;
     right: 10px; }
-  .gi_container .days {
+  .game_wrapper .days {
     top: 5px;
     left: 10px; }
-  .gi_container .updated {
+  .game_wrapper .updated {
     font-weight: bold;
     color: yellow; }

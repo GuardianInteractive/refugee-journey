@@ -1,6 +1,6 @@
 var JOURNEY = JOURNEY || {};
 JOURNEY.testimonies =  {
-    'airport': [
+    'start': [
         JOURNEY.html.testimony_airport,
         JOURNEY.html.testimony_flight
     ]
