@@ -26,6 +26,48 @@ JOURNEY.data = {
         }
     },
 
+
+    gotoTurkey: {
+        title: 'At a refugee camp in Turkey',
+        text: 'Life isn’t great in a refugee camp. In particular, schooling is limited, so every day you spend here your children’s education is on hold. But at least the daily threat of death by mortar is now far away. Your choices from here are fairly limited: you can sit it out, and hope the war ends soon. You can apply for asylum directly through one of the European countries’ agents in the camp - Germany has said it will take 10,000 refugees. Or you can go back to Syria and try your luck with another way out.' 
+        days: 33,
+        choice: {
+            text: 'What now?',
+            options: [
+                { text: 'Apply to Germany', destination: 'GermanApplication'},
+                { text: 'Sit it out', destination: 'sititout' },
+                { text: 'Go back', destination: 'start' },
+            ]
+        }
+    },
+
+    GermanApplication: {
+        title: 'At a refugee camp in Turkey',
+        text: 'Life isn’t great in a refugee camp. In particular, schooling is limited, so every day you spend here your children’s education is on hold. But at least the daily threat of death by mortar is now far away. Your choices from here are fairly limited: you can sit it out, and hope the war ends soon. You can apply for asylum directly through one of the European countries’ agents in the camp - Germany has said it will take 10,000 refugees. Or you can go back to Syria and try your luck with another way out.' 
+        days: 33,
+        choice: {
+            text: 'What now?',
+            options: [
+                { text: 'Apply to Germany', destination: 'GermanApplication'},
+                { text: 'Sit it out', destination: 'sititout' },
+                { text: 'Go back', destination: 'start' },
+            ]
+        }
+    },
+
+
+ sititout: {
+        title: 'Day after day in a Turkish refugee camp',
+        text: 'You start to feel at home in the camp eventually. You meet your neighbours. One of them has a Palestinian grandfather who knows people from his childhood who went to a refugee camp in Lebanon in 1948 and are still there. You wonder if your children will spend their entire lives in this camp. Your story is not over, but nor is it continuing.',
+        success: false,
+        end: true
+            },
+
+
+
+
+
+
     toSwedenbyland: {
         title: 'Overland out of Syria',
         text: 'Your first step is to find a people smuggler who’s willing to get you out of Syria. With your resources, and contacts, the best you can do is find someone who’ll get you as far as Istanbul. The good news is that, although the journey is long and hard, in an airless container, you do finally arrive on the outskirts of Istanbul. Your next challenge is how to continue. In the Turkish capital you find people who will offer to get you into Greece or into Bulgaria. From there you’ll be inside the EU and able to travel relatively freely all the way to Sweden. Which to choose?',
@@ -37,6 +79,22 @@ JOURNEY.data = {
                 { text: 'Greece', destination: 'toGreece' }
             ]
         }
+    },
+
+ toBulgaria: {
+        title: 'title',
+        text: 'A policeman boards your minibus as you cross into Bulgaria near Lesovo. He drags you and others off the bus. After a long wait, immigration officials take your fingerprints and name. Then another minibus arrives and you find yourself bundled onboard. When the doors open again your find yourself in the Turkish city of Edirne. This is illegal, but you have limited recourse to challenge it: you’re unlikely now ever to get into Europe as an official asylum seeker. ',
+        success: false,
+        end: true
+            },
+
+
+ toGreece: {
+        title: 'title',
+        text: 'You make it into Greece, and bypass Thessaloniki on your way to Athens, from where you hope it will be easier to join an international bus service to  Poland. Unfortunately, Athens is also the heartland of Golden Dawn, the far right party linked to ugly attacks on migrants.',
+        
+        success: false,
+        end:true
     },
 
 
@@ -64,32 +122,13 @@ JOURNEY.data = {
                 
     },
 
-    comeclean: {
+    keepquiet: {
         title: 'Through passport control in Stockholm',
         text: 'After a couple of days finding your feet in Sweden you decide to seek asylum officially. The bad news is that by knowingly entering the country using false documents you have committed a crime. The good news is that the Swedes are willing to overlook it, and grant you asylum. Who knows if a change in the political weather will mean that the next Syrian to make this mistake won’t be repatriated. ',
         success: true,
         end: true
                 
     },
-
-
-
-    keepquiet: {
-        title: 'Buy cheap passport',
-        text: 'You purchase a cheap passport.',
-        days: 6,
-        cost: 300,
-        item: 'cheapPassport',
-        choice: {
-            options: [
-                { text: 'Continue on', destination: 'arriveInGreece'}
-            ]
-        }
-    },
-
-
-
-
 
 
     cheapPassport: {
