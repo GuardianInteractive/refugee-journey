@@ -100,6 +100,41 @@ module.exports = function(grunt) {
             }
         },
 
+        aws_s3: {
+            options: {
+                bucket: 'gdn-stage',
+                region: 'eu-west-1',
+                access: 'public-read',
+                uploadConcurrency: 5,
+                debug: true
+            },
+            prod: {
+                files: [
+                    {
+                        action: 'upload',
+                        expand: true,
+                        cwd: 'dist/',
+                        src: ['*.*'],
+                        dest: 'remote/test/path/',
+                        params: {
+                            'CacheControl': 'max-age=60, public'
+                        }
+                    },
+                    {
+                        action: 'upload',
+                        expand: true,
+                        cwd: 'dist/',
+                        src: ['<%= pkg.version %>/**'],
+                        dest: 'remote/test/path/',
+                        params: {
+                            'CacheControl': 'max-age=300, public'
+                        }
+                    }
+                ]
+            }
+        },
+
+
         useminPrepare: { html: 'dist/index.html' },
         usemin: { html: 'dist/index.html' },
         clean: ['dist']
@@ -117,6 +152,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-replace');
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-mustache');
+    grunt.loadNpmTasks('grunt-aws-s3');
 
     // Tasks
     grunt.registerTask('js', [ 'mustache', 'jshint',  'replace', 'useminPrepare', 'concat', 'uglify']);
