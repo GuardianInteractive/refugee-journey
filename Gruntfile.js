@@ -34,7 +34,7 @@ module.exports = function(grunt) {
                     outputStyle: 'compact'
                 },
                 files: {
-                    'dist/css/main.css': 'src/css/main.scss'
+                    'dist/<%= pkg.version %>/css/main.css': 'src/css/main.scss'
                 }
             }
         },
@@ -75,7 +75,7 @@ module.exports = function(grunt) {
             options: {
                 patterns: [{
                     match: 'path',
-                    replacement: (isDev) ? '' : '<%= pkg.remotePath %>',
+                    replacement: (isDev) ? '/<%= pkg.version %>' : '<%= pkg.remotePath %>/<%= pkg.version %>',
                     expression: false   // simple variable lookup
                 }]
             },
@@ -83,7 +83,7 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     flatten: true,
-                    src: ['src/js/boot.js'],
+                    src: ['src/js/boot.js', 'src/index.html'],
                     dest: 'dist/'
                 }]
             }
@@ -100,13 +100,8 @@ module.exports = function(grunt) {
             }
         },
 
-        useminPrepare: {
-            html: 'src/index.html'
-        },
-        usemin: {
-            html: 'dist/index.html'
-        },
-
+        useminPrepare: { html: 'dist/index.html' },
+        usemin: { html: 'dist/index.html' },
         clean: ['dist']
     });
 
@@ -124,7 +119,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-mustache');
 
     // Tasks
-    grunt.registerTask('js', [ 'mustache', 'jshint', 'useminPrepare', 'concat', 'uglify', 'replace']);
+    grunt.registerTask('js', [ 'mustache', 'jshint',  'replace', 'useminPrepare', 'concat', 'uglify']);
     grunt.registerTask('build', ['clean', 'jshint', 'sass', 'copy', 'js', 'usemin']);
     grunt.registerTask('default', ['build', 'connect', 'watch']);
 };
