@@ -1,7 +1,8 @@
 {
   "name": "antarctica",
   "version": "0.0.1",
-  "remotePath": "http://interactive-guim-path/something/",
+  "remotePath": "https://s3-eu-west-1.amazonaws.com/gdn-stage/test/refugee-game",
+  "S3Path": "test/refugee-game/",
   "devDependencies": {
     "grunt": "~0.4.2",
     "grunt-contrib-jshint": "~0.7.2",

@@ -13,10 +13,10 @@ define([], function() {
          *
          **/
         boot : function(el, context, config) {
-            LazyLoad.css('/0.0.1/css/main.css');
+            LazyLoad.css('https://s3-eu-west-1.amazonaws.com/gdn-stage/test/refugee-game/0.0.1/css/main.css');
             LazyLoad.js([
                 '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js',
-                '/0.0.1/js/refugee-journey.min.js'
+                'https://s3-eu-west-1.amazonaws.com/gdn-stage/test/refugee-game/0.0.1/js/refugee-journey.min.js'
             ],
                 function () {
                     var game = new JOURNEY.Game(el);

@@ -1,6 +1,5 @@
 module.exports = function(grunt) {
-    grunt.option('prod', false);
-    var isDev = grunt.option('no-prod');
+    var isDev = !grunt.option('prod');
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -73,11 +72,18 @@ module.exports = function(grunt) {
 
         replace: {
             options: {
-                patterns: [{
-                    match: 'path',
-                    replacement: (isDev) ? '/<%= pkg.version %>' : '<%= pkg.remotePath %>/<%= pkg.version %>',
-                    expression: false   // simple variable lookup
-                }]
+                patterns: [
+                    {
+                        match: 'path',
+                        replacement: (isDev) ? '/<%= pkg.version %>' : '<%= pkg.remotePath %>/<%= pkg.version %>',
+                        expression: false   // simple variable lookup
+                    },
+                    {
+                        match: 'version',
+                        replacement: '<%= pkg.version %>',
+                        expression: false   // simple variable lookup
+                    }
+                ]
             },
             code: {
                 files: [{
@@ -106,7 +112,7 @@ module.exports = function(grunt) {
                 region: 'eu-west-1',
                 access: 'public-read',
                 uploadConcurrency: 5,
-                debug: true
+                debug: (isDev) ? true : false
             },
             prod: {
                 files: [
@@ -115,7 +121,7 @@ module.exports = function(grunt) {
                         expand: true,
                         cwd: 'dist/',
                         src: ['*.*'],
-                        dest: 'remote/test/path/',
+                        dest: '<%= pkg.S3Path %>',
                         params: {
                             'CacheControl': 'max-age=60, public'
                         }
@@ -125,7 +131,7 @@ module.exports = function(grunt) {
                         expand: true,
                         cwd: 'dist/',
                         src: ['<%= pkg.version %>/**'],
-                        dest: 'remote/test/path/',
+                        dest: '<%= pkg.S3Path %>',
                         params: {
                             'CacheControl': 'max-age=300, public'
                         }
@@ -158,4 +164,5 @@ module.exports = function(grunt) {
     grunt.registerTask('js', [ 'mustache', 'jshint',  'replace', 'useminPrepare', 'concat', 'uglify']);
     grunt.registerTask('build', ['clean', 'jshint', 'sass', 'copy', 'js', 'usemin']);
     grunt.registerTask('default', ['build', 'connect', 'watch']);
+    grunt.registerTask('deploy', ['build', 'aws_s3']);
 };
