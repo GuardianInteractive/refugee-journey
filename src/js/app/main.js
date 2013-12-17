@@ -4,19 +4,18 @@ JOURNEY.Game = function(el) {
 
     var container = el;
     var scenes = JOURNEY.data;
+    var initialStory;
+
     var sceneContainerEl;
     var sceneContentEl;
     var textboxEl;
     var choiceEl;
     var choiceTextEl;
     var outcomesEl;
-    var costEl;
-    var costValueEl;
     var gameWrapperEl;
-    var daysEl;
-    var daysValueEl;
     var testimonyEl;
     var testimoniesWrapperEl;
+
 
     var currentScene = 'start';
     var buttonContainer;
@@ -26,9 +25,6 @@ JOURNEY.Game = function(el) {
 
     function Player() {
         return {
-            dayCount: 0,
-            finance: 0,
-            childAlive: true,
             scenes: [],
             items: [],
             success: null
@@ -42,8 +38,6 @@ JOURNEY.Game = function(el) {
         sceneContentEl = $('.scene_content', container);
         textboxEl = $('.scene_text', container);
         choiceTextEl = $('.choice_text', container);
-        costValueEl = $('.cost_value', container);
-        daysValueEl = $('.days_value', container);
         buttonContainer = $('.button_container', container);
         outcomesEl = $('.debug_output', container);
         testimoniesWrapperEl = $('.testimonies', container);
@@ -66,11 +60,8 @@ JOURNEY.Game = function(el) {
     function render() {
         var scene = scenes[currentScene];
 
-        if (currentScene === 'start') {
-            costValueEl.text(0);
-            daysValueEl.text(0);
+        if (currentScene === 'start')
             player = new Player();
-        }
 
         if (scene.logic) {
             if ('passport' === scene.requireItem) {
@@ -80,16 +71,17 @@ JOURNEY.Game = function(el) {
             return render();
         }
 
-        sceneContainerEl.css('background', 'none');
-        sceneContentEl.empty();
-        textboxEl.text(scene.text);
-        choiceTextEl.text('');
+        gameWrapperEl.css('background-image', (scene.img) ? 'url(' + scene.img + ')' : '');
         buttonContainer.empty();
 
-        if (scene.asset) {
-            sceneContentEl.html(JOURNEY.assets[scene.asset].html);
-            sceneContainerEl.css('background-image', 'url(' + JOURNEY.assets[scene.asset].img + ')');
-        }
+        sceneContainerEl.html(Mustache.render(JOURNEY.html.view_scene, {
+            title: scene.title,
+            testimony: JOURNEY.testimonies[scene.testimony],
+            sceneText: scene.text,
+            choiceText: (scene.choice) ? scene.choice.text : ''
+        }));
+
+        buttonContainer = $('.button_container', sceneContainerEl);
 
         if (scene.choice) {
             if (scene.choice.text)
@@ -100,44 +92,31 @@ JOURNEY.Game = function(el) {
             player.success = scene.success;
             previousPlaythroughs.push(player);
             addChoiceBtn('Start again', 'start');
-            testimonies();
+            testimonies(player.scenes);
         }
 
-        if (scene.item) {
+        if (scene.item)
             player.items.push(scene.item);
-        }
-
-        if (scene.days && scene.days > 0) {
-            player.dayCount += scene.days;
-            daysValueEl.text(player.dayCount);
-            daysValueEl.addClass('updated');
-        }
-
-        if (scene.cost && scene.cost > 0) {
-            player.finance += scene.cost;
-            costValueEl.text(player.finance);
-            costValueEl.addClass('updated');
-        }
 
         updatePlayer();
     }
 
-    function testimonies() {
+    function testimonies(scenes) {
         testimonyEl.empty();
         gameWrapperEl.hide();
         testimoniesWrapperEl.show();
 
-        player.scenes.forEach(function(sceneName) {
+        scenes.forEach(function(sceneName) {
+            if (!JOURNEY.data.hasOwnProperty(sceneName))
+                return;
+
             var viewData = {
                 heading: JOURNEY.data[sceneName].title,
                 html: ''
             };
 
-            if (JOURNEY.testimonies.hasOwnProperty(sceneName)) {
-                JOURNEY.testimonies[sceneName].map(function(html) {
-                    viewData.html += html;
-                });
-            }
+            if (JOURNEY.data[sceneName].hasOwnProperty('testimony'))
+                viewData.html += JOURNEY.testimonies[JOURNEY.data[sceneName].testimony];
 
             var output = Mustache.render(JOURNEY.html.view_testimony, viewData);
             testimonyEl.append(output);
@@ -178,12 +157,25 @@ JOURNEY.Game = function(el) {
     }
 
 
+    function getParameterByName(name) {
+        name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]"); // jshint ignore:line
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+            results = regex.exec(location.search);
+        return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " ")); // jshint ignore:line
+    }
+
+
     function init() {
         setupDOM();
-        newGame();
+
+        initialStory = getParameterByName('journey');
+        if (initialStory === "") {
+            newGame();
+        } else {
+            testimonies(initialStory.split(','));
+        }
     }
 
     init();
-
     return this;
 };

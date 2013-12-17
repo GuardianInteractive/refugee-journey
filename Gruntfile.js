@@ -59,11 +59,20 @@ module.exports = function(grunt) {
         },
 
         mustache: {
-            files : {
+            views : {
                 src: 'src/html/',
                 dest: 'src/js/app/html.js',
                 options: {
                     prefix: 'var JOURNEY = JOURNEY || {}; JOURNEY.html = ',
+                    postfix: ';',
+                    verbose: true
+                }
+            },
+            testimonies : {
+                src: 'src/html/testimonies/',
+                dest: 'src/js/app/testimonies.js',
+                options: {
+                    prefix: 'var JOURNEY = JOURNEY || {}; JOURNEY.testimonies = ',
                     postfix: ';',
                     verbose: true
                 }
@@ -108,8 +117,8 @@ module.exports = function(grunt) {
 
         aws_s3: {
             options: {
-                bucket: 'gdn-stage',
-                region: 'eu-west-1',
+                bucket: 'gdn-cdn',
+                region: 'us-east-1',
                 access: 'public-read',
                 uploadConcurrency: 5,
                 debug: (isDev) ? true : false
@@ -161,8 +170,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-aws-s3');
 
     // Tasks
-    grunt.registerTask('js', [ 'mustache', 'jshint',  'replace', 'useminPrepare', 'concat', 'uglify']);
-    grunt.registerTask('build', ['clean', 'jshint', 'sass', 'copy', 'js', 'usemin']);
+    grunt.registerTask('js', ['jshint', 'mustache', 'replace', 'useminPrepare', 'concat', 'uglify', 'usemin']);
+    grunt.registerTask('build', ['clean', 'sass', 'copy', 'js']);
     grunt.registerTask('default', ['build', 'connect', 'watch']);
     grunt.registerTask('deploy', ['build', 'aws_s3']);
 };

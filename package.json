@@ -1,8 +1,8 @@
 {
   "name": "antarctica",
   "version": "0.0.1",
-  "remotePath": "https://s3-eu-west-1.amazonaws.com/gdn-stage/test/refugee-game",
-  "S3Path": "test/refugee-game/",
+  "remotePath": "https://s3.amazonaws.com/next-gen/world/ng-interactive/2014/jan/refugee-choices-interactive/",
+  "S3Path": "next-gen/world/ng-interactive/2014/jan/refugee-choices-interactive/",
   "devDependencies": {
     "grunt": "~0.4.2",
     "grunt-contrib-jshint": "~0.7.2",
@@ -17,6 +17,7 @@
     "grunt-contrib-uglify": "~0.2.7",
     "grunt-contrib-concat": "~0.3.0",
     "grunt-replace": "~0.5.1",
-    "grunt-aws-s3": "~0.7.2"
+    "grunt-aws-s3": "~0.7.2",
+    "grunt-contrib-compress": "~0.5.3"
   }
 }
