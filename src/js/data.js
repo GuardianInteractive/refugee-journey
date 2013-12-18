@@ -4,7 +4,7 @@ JOURNEY.data = {
 		title: 'Aleppo',
 		text: 'Your name is Karima. Your are a 28-year-old Sunni woman from Aleppo, and you have two children, a girl aged 10 and a boy aged 14. Your husband was killed in a mortar attack three months ago. You now realise you must, for your children’s sake, get out of Syria. You know many people who have left Syria, most to neighbouring countries where they are in refugee camps and some who have made it to northern European countries and been given refugee protection. You have some money you could use for your journey so now your choices begin.',
 		choice: {
-			text: 'Do you decide to try and reach Europe by any means necessary? Or do you decide it would be safer to travel overland to the nearest country, Turkey, and seek refuge there?'
+			text: 'Do you decide to try and reach Europe by any means necessary? Or do you decide it would be safer to travel overland to the nearest country, Turkey, and seek refuge there?',
 			options: [
 				{text: 'Europe', destination: 'scene2'}
 				{text: 'Turkey', destination: 'scene4'}
@@ -16,11 +16,11 @@ JOURNEY.data = {
 
 	scene2: {
 		title: 'Asylum',
-		text: 'You do your research and find out that in September, Sweden announced that it would give permanent residence to all Syrian refugees. Since early 2012, Sweden has received about 14,700 asylum applications from Syrians. Among them are member of your family, who you speak to regularly on the phone.They tell you that they are being  given support in building a new life in Sweden and that they would help you if you came.  They will wire you money along the way, to help make your savings go further.Unfortunately there is a catch. In order to apply for asylum in Sweden you need to actually get there first. This is true of most northern European countries. The UK and France for example have a high recognition rate for Syrians who apply for asylum within their borders, but asylum applications are not taken at foreign embassies. There is a relatively small resettlement programme in place, moving refugees directly from camps to European countries but you would have to be in a refugee camp to find out whether you could apply to be part of this.		( XXX Put stat in about asylum applications from Syrians across whole of Europe. )'
+		text: 'You do your research and find out that in September, Sweden announced that it would give permanent residence to all Syrian refugees. Since early 2012, Sweden has received about 14,700 asylum applications from Syrians. Among them are member of your family, who you speak to regularly on the phone.They tell you that they are being  given support in building a new life in Sweden and that they would help you if you came.  They will wire you money along the way, to help make your savings go further.Unfortunately there is a catch. In order to apply for asylum in Sweden you need to actually get there first. This is true of most northern European countries. The UK and France for example have a high recognition rate for Syrians who apply for asylum within their borders, but asylum applications are not taken at foreign embassies. There is a relatively small resettlement programme in place, moving refugees directly from camps to European countries but you would have to be in a refugee camp to find out whether you could apply to be part of this.		( XXX Put stat in about asylum applications from Syrians across whole of Europe. )',
 		choice: {
-			text: 'So how do you get there? Do you decide that the safest and easiest way to travel is by plane? You have some money saved and could fly to Stockholm. Or do you decide to travel overland, through Turkey and into the nearest EU country, Greece? Perhaps you will be able to get resettled directly from a camp along the way if you get in touch with the UNHCR. '
+			text: 'So how do you get there? Do you decide that the safest and easiest way to travel is by plane? You have some money saved and could fly to Stockholm. Or do you decide to travel overland, through Turkey and into the nearest EU country, Greece? Perhaps you will be able to get resettled directly from a camp along the way if you get in touch with the UNHCR. ',
 			options: [
-				{text: 'By air', destination: 'scene3'}
+				{text: 'By air', destination: 'scene3'},
 				{text: 'Overland', destination: 'scene3'}
 
 			]
@@ -31,9 +31,9 @@ JOURNEY.data = {
     
 	scene2: {
 		title: 'Asylum',
-		text: 'There is bad news. You can’t fly to Sweden because you don’t have a visa and there are now no new visas being granted to anyone in Syria. (CHECK) A very small number of family reunification visas are being granted to close family members such as children and spouses but this doesn’t apply to you. Last year in Europe only X family reunification visas were issued. (CHECK) Even if your husband was in Sweden or the UK you would not be gaurunteed a visa to join them.			If you want to leave Syria you have to travel overland. And if you hope to reach a northern European country you will have to do so illegally. There are now almost no legal routes to reach countries like Italy, Sweden or the UK, even though it is legal to claim asylum once you get there.			It is not just Syrians who face this catch 22 situation. The increase of visas needed for people leaving conflict ridden countries has massively increased over the past decade.			XXX AUDIO INSERT - (MOHAMED – case study, have audio – he had a visa from previous travels – flew into UK with his family)			Mohamed travelled directly to the UK with his family using a visa he received before war broke out. When he reached Heathrow airport he claimed asylum at the immigration desk. '
+		text: 'There is bad news. You can’t fly to Sweden because you don’t have a visa and there are now no new visas being granted to anyone in Syria. (CHECK) A very small number of family reunification visas are being granted to close family members such as children and spouses but this doesn’t apply to you. Last year in Europe only X family reunification visas were issued. (CHECK) Even if your husband was in Sweden or the UK you would not be gaurunteed a visa to join them.			If you want to leave Syria you have to travel overland. And if you hope to reach a northern European country you will have to do so illegally. There are now almost no legal routes to reach countries like Italy, Sweden or the UK, even though it is legal to claim asylum once you get there.			It is not just Syrians who face this catch 22 situation. The increase of visas needed for people leaving conflict ridden countries has massively increased over the past decade.			XXX AUDIO INSERT - (MOHAMED – case study, have audio – he had a visa from previous travels – flew into UK with his family)			Mohamed travelled directly to the UK with his family using a visa he received before war broke out. When he reached Heathrow airport he claimed asylum at the immigration desk. ',
 		choice: {
-			text: 'You have only one choice now. You have to travel overland if you want to leave Syria.'
+			text: 'You have only one choice now. You have to travel overland if you want to leave Syria.',
 			options: [
 				{text: 'Next', destination: 'scene2'}
 	
@@ -133,24 +133,11 @@ scene6: {
 
  scene9: {
         title: 'Bulgaria',
-        text: 'You pay a people smuggler to lead you with a group of people through the dense forests on the border between Turkey and Bulgaria.
-
-When you reach the Bulgarian border, armed men appear and line you all up and ask for ID. They then make you all get into the back of their van and they drive you back towards (Turkish town? need to check) and leave you there. All the children are crying, as you walk back towards XX (town?). Eventually you make it back to Istanbu.
-
-
-Even though such ’push backs’ are illegal, there have been reports of Syrians being turned away at the Bulgarian border, or driven straight back to Turkey, with no access to a fair asylum procedure.
-
-
-VIDEO INSERT – Story from Bulgaria / Turkey of Syrians talking about illegal push backs.',
+        text: 'You pay a people smuggler to lead you with a group of people through the dense forests on the border between Turkey and Bulgaria.When you reach the Bulgarian border, armed men appear and line you all up and ask for ID. They then make you all get into the back of their van and they drive you back towards (Turkish town? need to check) and leave you there. All the children are crying, as you walk back towards XX (town?). Eventually you make it back to Istanbul.Even though such ’push backs’ are illegal, there have been reports of Syrians being turned away at the Bulgarian border, or driven straight back to Turkey, with no access to a fair asylum procedure.VIDEO INSERT – Story from Bulgaria / Turkey of Syrians talking about illegal push backs.',
         asset: 'start',
         choice: {
-            text: 'You have two options
-
-
-1 Stay in Turkey (Go to scene 5)
-
-2 Use the last of your savings to try to get into Bulgaria again. (Go to scene 11)
-',
+            text: 'You have two options1 Stay in Turkey (Go to scene 5)
+2 Use the last of your savings to try to get into Bulgaria again. (Go to scene 11)',
             options: [
                 { text: 'Stay in Turkey', destination: 'scene5'},
                 { text: 'Try Bulgaria again', destination: 'scene11' }
@@ -163,15 +150,7 @@ VIDEO INSERT – Story from Bulgaria / Turkey of Syrians talking about illegal p
 
  scene11: {
         title: 'Bulgaria again',
-        text: 'This time, when you reach the border the guards that pick you up take you to one of several camps that have been set up to house Syrian refugees, you are told that the camp is called Harmanli. It is an open air detention centre and you are not allowed to leave, so there is no chance to move further into Europe or to turn back and return to Turkey. The conditions are extremely bad, with little or no official presence, no reception process and very little food.
-
-Many thousands of migrants, not only Syrians, but Afghans, Bangladeshis and even some Africans have started to take what was previously a barely used route into the EU, from Turkey and into Bulgaria. An estimated 5,000 refugees from Syria arrived between January and November 2013 (Amnesty int. figures)
-
-In a recent visit, the Guardian found a complete lack of official support for newly arrived refugees, and very poor conditions inside. One heavily pregnant woman, separated from her husband in Turkey, was being refused permission to leave the camp to give birth.
-
-VIDEO INSERT – film in Harmani, interviews with Syrians detained there.
-
-There is no way forward or back for you, the UNHCR is pushing for improved conditions in Bulgaria, and the government has promised to provide more support, but for now, you are stuck.',
+        text: 'This time, when you reach the border the guards that pick you up take you to one of several camps that have been set up to house Syrian refugees, you are told that the camp is called Harmanli. It is an open air detention centre and you are not allowed to leave, so there is no chance to move further into Europe or to turn back and return to Turkey. The conditions are extremely bad, with little or no official presence, no reception process and very little food. Many thousands of migrants, not only Syrians, but Afghans, Bangladeshis and even some Africans have started to take what was previously a barely used route into the EU, from Turkey and into Bulgaria. An estimated 5,000 refugees from Syria arrived between January and November 2013 (Amnesty int. figures) In a recent visit, the Guardian found a complete lack of official support for newly arrived refugees, and very poor conditions inside. One heavily pregnant woman, separated from her husband in Turkey, was being refused permission to leave the camp to give birth. VIDEO INSERT – film in Harmani, interviews with Syrians detained there. There is no way forward or back for you, the UNHCR is pushing for improved conditions in Bulgaria, and the government has promised to provide more support, but for now, you are stuck.',
         asset: 'start',
         success: false,
         end: true
@@ -183,48 +162,21 @@ There is no way forward or back for you, the UNHCR is pushing for improved condi
 
     scene10: {
         title: 'Life in Athens',
-        text: '
-
-You have connections within the refugee community in Athens, and there are Church groups who provide food for families with children. But one day when you are waiting outside the church at lunchtime the police arrive and take you and your children to a detention centre. Your son, who is only 14, is taken away and put into the male section of the camp, with adult men. You and your daughter have to share a room with several other women, there is very little fresh water and XXX
-
-Thousands of asylum seekers are detained, for up to 18 months for administrative purposes only, in what have been described as ’appalling conditions.,’ by the EU (Home Affairs Commissioner).
-
-Each year thousands of migrants are arrested and held in detention, in conditions the EU Home Affairs Commissioner as ’appalling’.
-The far right are on the rise.
-(poss video/ audio/ story? - past stories / videos? video from Calais?)
-
-Greece has focused on reinforcing its external borders and started a policy which relies too heavily on detention. Despite the Greek authorities’ determination to improve the asylum system and detention conditions, which in many instances remain deplorable, much still needs to be done. Similarly the challenges arising from the large flow of Syrian refugees into Turkey and now increasingly into Greece and other European countries is an issue where Europe needs to show more solidarity.
-The difficult economic context in Greece is contributing to rising social tension as well as increasing racism and xenophobia. This has to be tackled.
-
-Most migrants and asylum seekers do not want to stay in Greece and plan to continue their journey further into Europe. Many of them are however stuck in Greece, due to border checks and arrests when trying to exit Greece, [5] the current Dublin Regulation, and the fact that many irregular migrants cannot be returned to their country of origin.',
+        text: 'You have connections within the refugee community in Athens, and there are Church groups who provide food for families with children. But one day when you are waiting outside the church at lunchtime the police arrive and take you and your children to a detention centre. Your son, who is only 14, is taken away and put into the male section of the camp, with adult men. You and your daughter have to share a room with several other women, there is very little fresh water and XXX Thousands of asylum seekers are detained, for up to 18 months for administrative purposes only, in what have been described as ’appalling conditions.,’ by the EU (Home Affairs Commissioner). Each year thousands of migrants are arrested and held in detention, in conditions the EU Home Affairs Commissioner as ’appalling’. The far right are on the rise. (poss video/ audio/ story? - past stories / videos? video from Calais?) Greece has focused on reinforcing its external borders and started a policy which relies too heavily on detention. Despite the Greek authorities’ determination to improve the asylum system and detention conditions, which in many instances remain deplorable, much still needs to be done. Similarly the challenges arising from the large flow of Syrian  refugees into Turkey and now increasingly into Greece and other European countries is an issue where Europe needs to show more solidarity. The difficult economic context in Greece is contributing to rising social tension as well as increasing racism and xenophobia. This has to be tackled. Most migrants and asylum seekers do not want to stay in Greece and plan to continue their journey further into Europe. Many of them are however stuck in Greece, due to border checks and arrests when trying to exit Greece, [5] the current Dublin Regulation, and the fact that many irregular migrants cannot be returned to their country of origin.',
         success: false,
         end: true
             },
 
 
-SCENE 13 SWEDEN THROUGH ITALY - FAILURE
-
     scene13: {
         title: 'Through Italy to Sweden',
-        text: '
-Even though you don’t have documents allowing you to travel legally within the EU, you follow a path many others have taken and try to travel by boat via the Adriatic to Italy, from there you will be able to get a train onwards into Europe. You go to the main Greek port, Patras and arrive in Bari in Italy. Un
-
-(need to do a bit more research here on what happens on this journey)
-
-Last year, some European countries threatened Greece with removal from the Schengen agreement if they did not tighten their borders. Greece is under enormous pressure to stop migrants crossing it’s borders, as is Turkey.
-
-Illegal push backs have been reported on this Adriatic route.
-
-You now have two choices.
-
-1 Stay in Patras and try again. (Go to scene 14)
-2 You can’t face any more travelling so decide to stay in Athens for now. (Go to scene 10)',
+        text: ' Even though you don’t have documents allowing you to travel legally within the EU, you follow a path many others have taken and try to travel by boat via the Adriatic to Italy, from there you will be able to get a train onwards into Europe. You go to the main Greek port, Patras and arrive in Bari in Italy. Un (need to do a bit more research here on what happens on this journey) Last year, some European countries threatened Greece with removal from the Schengen agreement if they did not tighten their borders. Greece is under enormous pressure to stop migrants crossing it’s borders, as is Turkey. Illegal push backs have been reported on this Adriatic route. You now have two choices. 1 Stay in Patras and try again. (Go to scene 14) 2 You can’t face any more travelling so decide to stay in Athens for now. (Go to scene 10)',
         asset: 'start',
         choice: {
             text: '?',
             options: [
-                { text: 'Sweden', destination: 'gotoSweden'},
-                { text: 'Turkey', destination: 'gotoTurkey' }
+                { text: 'Try again', destination: 'scene14'},
+                { text: 'Stay in Athens', destination: 'scene10' }
             ]
         }
     },
@@ -232,12 +184,7 @@ You now have two choices.
 
    scene14: {
         title: 'To Sweden via Italy',
-        text: 'This time you make it into Italy (add more detail).  
-
-You have two choices.
-
-
-',
+        text: 'This time you make it into Italy (add more detail).  You have two choices.',
         asset: 'start',
         choice: {
             text: '1. Claim asylum in Italy (Go to scene 15)
@@ -252,11 +199,7 @@ You have two choices.
 
         scene12: {
         title: 'Arriving in Sweden by plane',
-        text: 'You are lucky this time. Your passports work and despite your nerves you are allowed to board the plane.  
-
-(stat here about how many asylum applications at Stockholm airport + at other EU countries))
-
-As soon as your reach passport control at Stockholm airport you tell them that your passport is fake and you tell them, in English, that you are here to claim asylum.',
+        text: 'You are lucky this time. Your passports work and despite your nerves you are allowed to board the plane.  (stat here about how many asylum applications at Stockholm airport + at other EU countries))As soon as your reach passport control at Stockholm airport you tell them that your passport is fake and you tell them, in English, that you are here to claim asylum.',
         asset: 'start',
         choice: {
             text: 'Next',
@@ -268,22 +211,7 @@ As soon as your reach passport control at Stockholm airport you tell them that y
 
     scene15: {
         title: 'Refugee life in Italy',
-        text: 'You tell the border officials in Bari that you want to claim asylum. They give you a cash payment of 200 euros and train tickets to Rome. Once you are in Rome you claim asylum. Because you have children you are given a place in a reception centre, although friends you have made on your journey are not so lucky. Not all asylum seekers are given housing in Italy, many end up sleeping on the street.
-
-There have been widely reported criticisms of the Italian asylum system and the lack of support for refugees.
-
-Asylum seekers say that the huge difference in the way refugees are treated across Europe leaves them with the choice of life on the streets in Greece or Italy, or a hazardous illegal journey towards northern European countries like Sweden, the UK or Germany.
-
-VIDEO INSERT – ROME/ CALAIS etc?
-
-GO TO VIDEO INSERT> Africans/ Afghans
-
-
-Eventually you are given refugee status, but there is no welfare support and you can’t speak Italian so it’s impossible to find work. You are allowed to stay in your hostel but you don’t have any money left so you have to rely on church groups for food and basic Italian lessons.
-
-Unfortunately you can’t move on now. You have been fingerprinted in Rome and your prints are stored on the Eurodac system. Under the ‘Dublin’ system, asylum seekers are only allowed to make a claim in the first EU country they enter. But the differences in support on offer around the EU means that people continue to try and breach this system. In the two years to the end of October 2013, Sweden has received 20,490 new Syrian asylum applications and Germany received 16,100 such applications. Less than 1,000 people have claimed asylum in each of Greece, Italy and Cyprus.
-
-All you can do is struggle on, trying to learn Italian and relying on the support of the churches and fellow refugees.',
+        text: 'You tell the border officials in Bari that you want to claim asylum. They give you a cash payment of 200 euros and train tickets to Rome. Once you are in Rome you claim asylum. Because you have children you are given a place in a reception centre, although friends you have made on your journey are not so lucky. Not all asylum seekers are given housing in Italy, many end up sleeping on the street.There have been widely reported criticisms of the Italian asylum system and the lack of support for refugees.Asylum seekers say that the huge difference in the way refugees are treated across Europe leaves them with the choice of life on the streets in Greece or Italy, or a hazardous illegal journey towards northern European countries like Sweden, the UK or Germany.VIDEO INSERT – ROME/ CALAIS etc?GO TO VIDEO INSERT> Africans/ Afghans. Eventually you are given refugee status, but there is no welfare support and you can’t speak Italian so it’s impossible to find work. You are allowed to stay in your hostel but you don’t have any money left so you have to rely on church groups for food and basic Italian lessons. Unfortunately you can’t move on now. You have been fingerprinted in Rome and your prints are stored on the Eurodac system. Under the ‘Dublin’ system, asylum seekers are only allowed to make a claim in the first EU country they enter. But the differences in support on offer around the EU means that people continue to try and breach this system. In the two years to the end of October 2013, Sweden has received 20,490 new Syrian asylum applications and Germany received 16,100 such applications. Less than 1,000 people have claimed asylum in each of Greece, Italy and Cyprus. All you can do is struggle on, trying to learn Italian and relying on the support of the churches and fellow refugees.',
         success: false,
         end: true
             },
@@ -292,15 +220,7 @@ All you can do is struggle on, trying to learn Italian and relying on the suppor
 
     scene16: {
         title: 'Overland to Sweden',
-        text: 'Many asylum seekers try to leave Italy without being detected. There have been widely reported problems for refugees there, even once people are recognised as refugees under international law, there is often a lack of any kind of support. In 2011 the Guardian visited Rome, where hundreds of refugees, including children were sleeping in the street.
-
-GO TO VIDEO INSERT> Africans/ Afghans
-
-Even though all migrants detected at an international border should have their fingerprints stored on the Eurodac system, to stop them claiming asylum in more than one country, there have been reports that Italian border officials do not take fingerprints of all migrants, but release them to travel onwards into Europe.
-
-You have enough money left to pay for trains that take you out of Italy, north towards Sweden, changing to a ferry at Rostock (give more details of routes). Although you pass through Germany, which has a high acceptance rate for Syrian asylum seekers, your family have promised you support and help if you can reach them.
-
-When you finally arrive in Stockholm you claim asylum.',
+        text: 'Many asylum seekers try to leave Italy without being detected. There have been widely reported problems for refugees there, even once people are recognised as refugees under international law, there is often a lack of any kind of support. In 2011 the Guardian visited Rome, where hundreds of refugees, including children were sleeping in the street. GO TO VIDEO INSERT> Africans/ Afghans Even though all migrants detected at an international border should have their fingerprints stored on the Eurodac system, to stop them claiming asylum in more than one country, there have been reports that Italian border officials do not take fingerprints of all migrants, but release them to travel onwards into Europe. You have enough money left to pay for trains that take you out of Italy, north towards Sweden, changing to a ferry at Rostock (give more details of routes). Although you pass through Germany, which has a high acceptance rate for Syrian asylum seekers, your family have promised you support and help if you can reach them. When you finally arrive in Stockholm you claim asylum.',
         asset: 'start',
         choice: {
             text: 'Next',
@@ -313,17 +233,7 @@ When you finally arrive in Stockholm you claim asylum.',
 
  scene11: {
         title: 'Refugee life in Sweden',
-        text: 'You are given a place to stay in a hostel for families, put in touch with Syrian support groups and given access to a basic benefit that will help you survive until your asylum claim is heard.
-
-You explain to the officials why you left Syria and within a month you are told you have permanent residence. You are given social housing and free Swedish lessons and told that once you speak reasonable Swedish you will be given help finding a job.
-
-VIDEO INSERT – back to Somalia guy who was resettled, talking about life in Sweden?
-
-Although there is now a Common EU Asylum System, which came into operation in summer 2014, nobody denies that the way refugees are treated varies wildly from country to country. In the UK, Sweden and Germany, asylum seekers are given housing while their claim is processed, and support once they are granted refugee status. This is not always the case in Greece, Italy or the eastern European countries. Experts and EU politicians continually warn that as long as these differences exist, people will continue to make dangerous journeys overland to reach a country that promises safety and support.
-
-((VIDEO LINK – CALAIS??? recent footage from protests in Calais? Calais film from a few years ago?
-
-Interview in Rome - with man explaining that system is different across the whole of Europe?)',
+        text: 'You are given a place to stay in a hostel for families, put in touch with Syrian support groups and given access to a basic benefit that will help you survive until your asylum claim is heard. You explain to the officials why you left Syria and within a month you are told you have permanent residence. You are given social housing and free Swedish lessons and told that once you speak reasonable Swedish you will be given help finding a job. VIDEO INSERT – back to Somalia guy who was resettled, talking about life in Sweden? Although there is now a Common EU Asylum System, which came into operation in summer 2014, nobody denies that the way refugees are treated varies wildly from country to country. In the UK, Sweden and Germany, asylum seekers are given housing while their claim is processed, and support once they are granted refugee status. This is not always the case in Greece, Italy or the eastern European countries. Experts and EU politicians continually warn that as long as these differences exist, people will continue to make dangerous journeys overland to reach a country that promises safety and support. ((VIDEO LINK – CALAIS??? recent footage from protests in Calais? Calais film from a few years ago? Interview in Rome - with man explaining that system is different across the whole of Europe?)',
         success: true,
         end: true
             },
