@@ -170,8 +170,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-aws-s3');
 
     // Tasks
-    grunt.registerTask('js', ['jshint', 'mustache', 'replace', 'useminPrepare', 'concat', 'uglify', 'usemin']);
-    grunt.registerTask('build', ['clean', 'sass', 'copy', 'js']);
+    grunt.registerTask('js', ['jshint', 'concat', 'uglify', 'usemin']);
+    grunt.registerTask('build', ['clean', 'sass', 'copy', 'mustache', 'replace', 'useminPrepare', 'js']);
     grunt.registerTask('default', ['build', 'connect', 'watch']);
     grunt.registerTask('deploy', ['build', 'aws_s3']);
 };

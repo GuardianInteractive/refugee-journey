@@ -2,13 +2,11 @@ body {
   margin: 0;
   padding: 0; }
 
+figure {
+  margin: 0; }
+
 .game_wrapper {
   background: #eeeeee;
-  background-image: url(http://placehold.it/960x500);
-  background-repeat: no-repeat;
-  background-size: contain;
-  padding: 40% 40px 10px 40px;
-  font-family: arial, sans-serif;
   color: #222222;
   font-size: 14px;
   line-height: 16px;
@@ -17,6 +15,12 @@ body {
     position: relative; }
     .game_wrapper .scene_container video {
       width: 100%; }
+  .game_wrapper .scene {
+    background-image: url(http://placehold.it/960x500);
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding: 40% 40px 10px 40px;
+    font-family: arial, sans-serif; }
   .game_wrapper .scene-title {
     background: rgba(0, 0, 0, 0.6);
     color: white;
@@ -48,7 +52,7 @@ body {
     font-size: 16px;
     font-weight: bold;
     margin-top: 20px; }
-  .game_wrapper button {
+  .game_wrapper .choice_btn {
     font-family: monospace;
     border: 1px solid white;
     background-color: black;
@@ -56,6 +60,12 @@ body {
     cursor: pointer;
     font-size: 14px;
     padding: 6px 20px; }
+    .game_wrapper .choice_btn.disabled {
+      color: #d5d5d5;
+      background-color: #eaeaea; }
+      .game_wrapper .choice_btn.disabled.picked {
+        color: gainsboro;
+        background-color: #a0a0a0; }
   .game_wrapper button:hover {
     background: #999999;
     color: black; }

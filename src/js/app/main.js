@@ -63,40 +63,34 @@ JOURNEY.Game = function(el) {
         if (currentScene === 'start')
             player = new Player();
 
-        if (scene.logic) {
-            if ('passport' === scene.requireItem) {
-                if (true === isPassportValid()) currentScene = scene.outcomes.good.destination;
-                else currentScene = scene.outcomes.bad.destination;
-            }
-            return render();
-        }
-
-        gameWrapperEl.css('background-image', (scene.img) ? 'url(' + scene.img + ')' : '');
-        buttonContainer.empty();
-
-        sceneContainerEl.html(Mustache.render(JOURNEY.html.view_scene, {
+        var sceneHTML = Mustache.render(JOURNEY.html.view_scene, {
             title: scene.title,
             testimony: JOURNEY.testimonies[scene.testimony],
             sceneText: scene.text,
             choiceText: (scene.choice) ? scene.choice.text : ''
-        }));
+        });
+        var sceneEl = $(sceneHTML);
+        sceneEl.css('background-image', (scene.img) ? 'url(' + scene.img + ')' : '');
+        sceneContainerEl.append(sceneEl);
+        sceneEl.get()[0].scrollIntoView();
 
-        buttonContainer = $('.button_container', sceneContainerEl);
+        buttonContainer = $('.button_container', sceneEl);
+
+        $('.choice_btn', sceneContainerEl).off().attr('disabled', true).addClass('disabled');
 
         if (scene.choice) {
-            if (scene.choice.text)
-                choiceTextEl.text('> ' + scene.choice.text);
-
             addChoiceBtns(scene.choice.options);
-        } else if (scene.end === true) {
-            player.success = scene.success;
-            previousPlaythroughs.push(player);
-            addChoiceBtn('Start again', 'start');
-            testimonies(player.scenes);
         }
 
-        if (scene.item)
-            player.items.push(scene.item);
+        if (scene.end === true) {
+            player.success = scene.success;
+            previousPlaythroughs.push(player);
+            //addChoiceBtn('Start again', 'start');
+            //testimonies(player.scenes);
+            currentScene = 'end';
+            return render();
+
+        }
 
         updatePlayer();
     }
@@ -144,8 +138,9 @@ JOURNEY.Game = function(el) {
     }
 
     function addChoiceBtn(text, destination) {
-        var btnEL = $('<button></button>').text(text);
+        var btnEL = $('<button class="choice_btn"></button>').text(text);
         btnEL.on('click',function() {
+            $(this).addClass('picked');
             clickedChoice(destination);
         });
         buttonContainer.append(btnEL);
