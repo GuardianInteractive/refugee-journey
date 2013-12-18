@@ -108,8 +108,7 @@ scene6: {
 
  scene8: {
         title: 'The Greek asylum system',
-        text: 'You join a queue of hundreds of others waiting outside the Aliens Police Directorate in Athens to register as an asylum seeker. Unfortunately the Greek asylum system has been in a state of chaos for several years and your claim for asylum, like the majority of others, is refused. The number of Syrians being given protection in Greece is almost zero. In 2012 no Syrians were given asylum (how many entrants? What are 2013 figures). Even for those who manage to make a claim, there is little support. The Greek government has been criticised for failing to provide adequate reception and support for vulnerable migrants and for the ’deplorable’ conditions faced by Syrians in particular. (link to Amnesty report).(INSERT VIDEO HERE - situation in Greece)You now have several choices.
-',
+        text: 'You join a queue of hundreds of others waiting outside the Aliens Police Directorate in Athens to register as an asylum seeker. Unfortunately the Greek asylum system has been in a state of chaos for several years and your claim for asylum, like the majority of others, is refused. The number of Syrians being given protection in Greece is almost zero. In 2012 no Syrians were given asylum (how many entrants? What are 2013 figures). Even for those who manage to make a claim, there is little support. The Greek government has been criticised for failing to provide adequate reception and support for vulnerable migrants and for the ’deplorable’ conditions faced by Syrians in particular. (link to Amnesty report).(INSERT VIDEO HERE - situation in Greece)You now have several choices.',
         asset: 'start',
         choice: {
             text: '1 Return to Turkey and try to reach Europe via Bulgaria instead (SCENE 11) 2 Try to make a life in Athens, blending into the underground Syrian community there. (SCENE 10) 3 Use your savings to look for fake passports that would get you onto a plane to Stockholm. (SCENE 12)4 You decide to keep moving forward and try to reach Sweden overland,  You don’t want to risk using a false passport so you work out the overland journey, through eastern Europe, Romania and Germany and into Sweden. (SCENE 13)',
@@ -129,8 +128,7 @@ scene6: {
         text: 'You pay a people smuggler to lead you with a group of people through the dense forests on the border between Turkey and Bulgaria.When you reach the Bulgarian border, armed men appear and line you all up and ask for ID. They then make you all get into the back of their van and they drive you back towards (Turkish town? need to check) and leave you there. All the children are crying, as you walk back towards XX (town?). Eventually you make it back to Istanbul.Even though such ’push backs’ are illegal, there have been reports of Syrians being turned away at the Bulgarian border, or driven straight back to Turkey, with no access to a fair asylum procedure.VIDEO INSERT – Story from Bulgaria / Turkey of Syrians talking about illegal push backs.',
         asset: 'start',
         choice: {
-            text: 'You have two options1 Stay in Turkey (Go to scene 5)
-2 Use the last of your savings to try to get into Bulgaria again. (Go to scene 11)',
+            text: 'You have two options1 Stay in Turkey (Go to scene 5)2 Use the last of your savings to try to get into Bulgaria again. (Go to scene 11)',
             options: [
                 { text: 'Stay in Turkey', destination: 'scene5'},
                 { text: 'Try Bulgaria again', destination: 'scene11' }
