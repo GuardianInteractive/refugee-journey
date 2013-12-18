@@ -94,10 +94,10 @@ scene6: {
 
  scene7: {
         title: 'Into Greece',
-        text: 'This time, after paying the smugglers again, you are one of the gradually reducing number who do make it over the Evros border and into Greece. (do we have a story to illustrate this???) After crossing the border you travel to Athens (how?). Friends in the Syrian community in Istanbul have given you the contact details of a church that helps refugee families so you head there.        	Now you are here you have two choices.',
+        text: 'This time, after paying the smugglers again, you are one of the gradually reducing number who do make it over the Evros border and into Greece. (do we have a story to illustrate this???) After crossing the border you travel to Athens (how?). Friends in the Syrian community in Istanbul have given you the contact details of a church that helps refugee families so you head there. Now you are here you have two choices.',
         asset: 'start',
         choice: {
-            text: 'You know that the borders to leave Greece are watched to stop irregular migrants leaving as well as entering, so you could claim asylum here rather than put your children through more difficult travelling.				Or you could keep going to Sweden, which means avoiding detection by Greek border guards. Migrants without refugee status in Greece are frequently rounded up and detained.',
+            text: 'You know that the borders to leave Greece are watched to stop irregular migrants leaving as well as entering, so you could claim asylum here rather than put your children through more difficult travelling.	Or you could keep going to Sweden, which means avoiding detection by Greek border guards. Migrants without refugee status in Greece are frequently rounded up and detained.',
             options: [
                 { text: 'Stay in Greece', destination: 'scene8'},
                 { text: 'Head for Sweden', destination: 'gotoTurkey' }
@@ -108,18 +108,11 @@ scene6: {
 
  scene8: {
         title: 'The Greek asylum system',
-        text: 'You join a queue of hundreds of others waiting outside the Aliens Police Directorate in Athens to register as an asylum seeker. Unfortunately the Greek asylum system has been in a state of chaos for several years and your claim for asylum, like the majority of others, is refused. The number of Syrians being given protection in Greece is almost zero. In 2012 no Syrians were given asylum (how many entrants? What are 2013 figures). Even for those who manage to make a claim, there is little support. The Greek government has been criticised for failing to provide adequate reception and support for vulnerable migrants and for the ’deplorable’ conditions faced by Syrians in particular. (link to Amnesty report).
-
-			(INSERT VIDEO HERE - situation in Greece)
-
-			You now have several choices.
+        text: 'You join a queue of hundreds of others waiting outside the Aliens Police Directorate in Athens to register as an asylum seeker. Unfortunately the Greek asylum system has been in a state of chaos for several years and your claim for asylum, like the majority of others, is refused. The number of Syrians being given protection in Greece is almost zero. In 2012 no Syrians were given asylum (how many entrants? What are 2013 figures). Even for those who manage to make a claim, there is little support. The Greek government has been criticised for failing to provide adequate reception and support for vulnerable migrants and for the ’deplorable’ conditions faced by Syrians in particular. (link to Amnesty report).(INSERT VIDEO HERE - situation in Greece)You now have several choices.
 ',
         asset: 'start',
         choice: {
-            text: '			1 Return to Turkey and try to reach Europe via Bulgaria instead (SCENE 11)
-			2 Try to make a life in Athens, blending into the underground Syrian community there. (SCENE 10)
-3 Use your savings to look for fake passports that would get you onto a plane to Stockholm. (SCENE 12)
-4 You decide to keep moving forward and try to reach Sweden overland,  You don’t want to risk using a false passport so you work out the overland journey, through eastern Europe, Romania and Germany and into Sweden. (SCENE 13)',
+            text: '1 Return to Turkey and try to reach Europe via Bulgaria instead (SCENE 11) 2 Try to make a life in Athens, blending into the underground Syrian community there. (SCENE 10) 3 Use your savings to look for fake passports that would get you onto a plane to Stockholm. (SCENE 12)4 You decide to keep moving forward and try to reach Sweden overland,  You don’t want to risk using a false passport so you work out the overland journey, through eastern Europe, Romania and Germany and into Sweden. (SCENE 13)',
             options: [
                 { text: 'Back to Turkey', destination: 'scene11'},
                 { text: 'Fake passport', destination: 'scene12'},
@@ -187,8 +180,7 @@ scene6: {
         text: 'This time you make it into Italy (add more detail).  You have two choices.',
         asset: 'start',
         choice: {
-            text: '1. Claim asylum in Italy (Go to scene 15)
-2. You are in the Schengen zone now so you think it’s worth just travelling forward to Sweden overland, avoiding the Italian authorities. (Go to scene 16)?',
+            text: '1. Claim asylum in Italy (Go to scene 15) 2. You are in the Schengen zone now so you think it’s worth just travelling forward to Sweden overland, avoiding the Italian authorities. (Go to scene 16)?',
             options: [
                 { text: 'Claim asylum', destination: 'scene15'},
                 { text: 'Push on to Sweden', destination: 'scene16' }
