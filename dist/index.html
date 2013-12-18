@@ -3,7 +3,7 @@
 <head>
     <title>Refugee journey</title>
     <meta charset="utf-8">
-    <link type="text/css" rel="stylesheet" href="0.0.1/css/main.css" />
+    <link type="text/css" rel="stylesheet" href="@@version/css/main.css" />
 </head>
 <body>
 
@@ -11,7 +11,13 @@
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
-<script src="0.0.1/js/refugee-journey.min.js"></script>
+<!-- build:js(src/) @@version/js/refugee-journey.min.js -->
+<script src="js/libs/mustache.js"></script>
+<script src="js/app/html.js"></script>
+<script src="js/app/testimonies.js"></script>
+<script src="js/app/data.js"></script>
+<script src="js/app/main.js"></script>
+<!-- endbuild -->
 
 <script>
     var container = document.getElementById('container');
