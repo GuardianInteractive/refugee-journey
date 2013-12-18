@@ -11,7 +11,7 @@ JOURNEY.data = {
 
 			]
 
-		}
+		},
 
 
 	scene2: {
@@ -25,7 +25,7 @@ JOURNEY.data = {
 
 			]
 
-		}
+		},
 
 
     
@@ -39,7 +39,7 @@ JOURNEY.data = {
 	
 			]
 
-		}
+		},
 
 scene4: {
         title: 'Turkey',
