@@ -1,6 +1,5 @@
 module.exports = function(grunt) {
-    grunt.option('prod', false);
-    var isDev = grunt.option('no-prod');
+    var isDev = !grunt.option('prod');
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -34,7 +33,7 @@ module.exports = function(grunt) {
                     outputStyle: 'compact'
                 },
                 files: {
-                    'dist/css/main.css': 'src/css/main.scss'
+                    'dist/<%= pkg.version %>/css/main.css': 'src/css/main.scss'
                 }
             }
         },
@@ -60,11 +59,20 @@ module.exports = function(grunt) {
         },
 
         mustache: {
-            files : {
+            views : {
                 src: 'src/html/',
                 dest: 'src/js/app/html.js',
                 options: {
                     prefix: 'var JOURNEY = JOURNEY || {}; JOURNEY.html = ',
+                    postfix: ';',
+                    verbose: true
+                }
+            },
+            testimonies : {
+                src: 'src/html/testimonies/',
+                dest: 'src/js/app/testimonies.js',
+                options: {
+                    prefix: 'var JOURNEY = JOURNEY || {}; JOURNEY.testimonies = ',
                     postfix: ';',
                     verbose: true
                 }
@@ -73,17 +81,24 @@ module.exports = function(grunt) {
 
         replace: {
             options: {
-                patterns: [{
-                    match: 'path',
-                    replacement: (isDev) ? '' : '<%= pkg.remotePath %>',
-                    expression: false   // simple variable lookup
-                }]
+                patterns: [
+                    {
+                        match: 'path',
+                        replacement: (isDev) ? '/<%= pkg.version %>' : '<%= pkg.remotePath %>/<%= pkg.version %>',
+                        expression: false   // simple variable lookup
+                    },
+                    {
+                        match: 'version',
+                        replacement: '<%= pkg.version %>',
+                        expression: false   // simple variable lookup
+                    }
+                ]
             },
             code: {
                 files: [{
                     expand: true,
                     flatten: true,
-                    src: ['src/js/boot.js'],
+                    src: ['src/js/boot.js', 'src/index.html'],
                     dest: 'dist/'
                 }]
             }
@@ -100,13 +115,43 @@ module.exports = function(grunt) {
             }
         },
 
-        useminPrepare: {
-            html: 'src/index.html'
-        },
-        usemin: {
-            html: 'dist/index.html'
+        aws_s3: {
+            options: {
+                bucket: 'gdn-cdn',
+                region: 'us-east-1',
+                access: 'public-read',
+                uploadConcurrency: 5,
+                debug: (isDev) ? true : false
+            },
+            prod: {
+                files: [
+                    {
+                        action: 'upload',
+                        expand: true,
+                        cwd: 'dist/',
+                        src: ['*.*'],
+                        dest: '<%= pkg.S3Path %>',
+                        params: {
+                            'CacheControl': 'max-age=60, public'
+                        }
+                    },
+                    {
+                        action: 'upload',
+                        expand: true,
+                        cwd: 'dist/',
+                        src: ['<%= pkg.version %>/**'],
+                        dest: '<%= pkg.S3Path %>',
+                        params: {
+                            'CacheControl': 'max-age=300, public'
+                        }
+                    }
+                ]
+            }
         },
 
+
+        useminPrepare: { html: 'dist/index.html' },
+        usemin: { html: 'dist/index.html' },
         clean: ['dist']
     });
 
@@ -122,9 +167,11 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-replace');
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-mustache');
+    grunt.loadNpmTasks('grunt-aws-s3');
 
     // Tasks
-    grunt.registerTask('js', [ 'mustache', 'jshint', 'useminPrepare', 'concat', 'uglify', 'replace']);
-    grunt.registerTask('build', ['clean', 'jshint', 'sass', 'copy', 'js', 'usemin']);
+    grunt.registerTask('js', ['jshint', 'mustache', 'replace', 'useminPrepare', 'concat', 'uglify', 'usemin']);
+    grunt.registerTask('build', ['clean', 'sass', 'copy', 'js']);
     grunt.registerTask('default', ['build', 'connect', 'watch']);
+    grunt.registerTask('deploy', ['build', 'aws_s3']);
 };

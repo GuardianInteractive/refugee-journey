@@ -3,23 +3,51 @@ body {
   padding: 0; }
 
 .game_wrapper {
-  font-family: monospace;
-  background: black;
-  color: white;
+  background: #eeeeee;
+  background-image: url(http://placehold.it/960x500);
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 40% 40px 10px 40px;
+  font-family: arial, sans-serif;
+  color: #222222;
   font-size: 14px;
   line-height: 16px;
-  padding: 10px;
   position: relative; }
   .game_wrapper .scene_container {
-    padding: 10px;
-    min-height: 400px; }
+    position: relative; }
     .game_wrapper .scene_container video {
       width: 100%; }
+  .game_wrapper .scene-title {
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px;
+    margin: 0; }
+  .game_wrapper .scene-inner {
+    background: white;
+    padding: 30px;
+    overflow: hidden; }
   .game_wrapper .scene_text {
     padding: 20px;
     background-color: #887733;
     margin: 0;
     margin-top: 10px; }
+  .game_wrapper .testimony {
+    padding: 10px;
+    background: #eeeeee;
+    color: #444444;
+    float: left;
+    width: 45%;
+    overflow: hidden; }
+  .game_wrapper .scene-copy, .game_wrapper .choices {
+    clear: right;
+    float: right;
+    width: 45%; }
+  .game_wrapper .choices {
+    border-top: 4px solid #999999;
+    padding-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 20px; }
   .game_wrapper button {
     font-family: monospace;
     border: 1px solid white;
