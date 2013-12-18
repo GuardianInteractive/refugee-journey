@@ -6,7 +6,7 @@ JOURNEY.data = {
 		choice: {
 			text: 'Do you decide to try and reach Europe by any means necessary? Or do you decide it would be safer to travel overland to the nearest country, Turkey, and seek refuge there?',
 			options: [
-				{text: 'Europe', destination: 'scene2'}
+				{text: 'Europe', destination: 'scene2'},
 				{text: 'Turkey', destination: 'scene4'}
 
 			]
