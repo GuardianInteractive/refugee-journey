@@ -57,7 +57,7 @@ body {
     font-size: 14px;
     padding: 6px 20px; }
   .game_wrapper button:hover {
-    background: white;
+    background: #999999;
     color: black; }
   .game_wrapper .outcomes {
     background: #222222;

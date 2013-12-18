@@ -3,9 +3,6 @@ JOURNEY.Game = function(el) {
     'use strict';
 
     var container = el;
-    var scenes = JOURNEY.data;
-    var initialStory;
-
     var sceneContainerEl;
     var sceneContentEl;
     var textboxEl;
@@ -19,8 +16,6 @@ JOURNEY.Game = function(el) {
 
     var currentScene = 'start';
     var buttonContainer;
-    var player;
-
     var previousPlaythroughs = [];
 
     function Player() {
@@ -30,6 +25,8 @@ JOURNEY.Game = function(el) {
             success: null
         };
     }
+
+    var player = new Player();
 
     function setupDOM() {
         container.innerHTML = JOURNEY.html.base_layout;
@@ -47,6 +44,9 @@ JOURNEY.Game = function(el) {
 
         choiceEl = document.createElement('button');
         choiceEl.classList.add('choice_btn');
+
+        $('.twitter_share').on('click', shareTwitter);
+        $('.facebook_share').on('click', shareFacebook);
     }
 
     function newGame() {
@@ -58,7 +58,7 @@ JOURNEY.Game = function(el) {
     }
 
     function render() {
-        var scene = scenes[currentScene];
+        var scene = JOURNEY.data[currentScene];
 
         if (currentScene === 'start')
             player = new Player();
@@ -156,7 +156,7 @@ JOURNEY.Game = function(el) {
         render();
     }
 
-
+    // http://stackoverflow.com/a/901144
     function getParameterByName(name) {
         name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]"); // jshint ignore:line
         var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
@@ -164,17 +164,73 @@ JOURNEY.Game = function(el) {
         return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " ")); // jshint ignore:line
     }
 
+    function areValidScenes(scenes) {
+        return scenes.every(function(sceneName) {
+            return JOURNEY.data.hasOwnProperty(sceneName);
+        });
+    }
+
+    function getShareURL() {
+        var shareURL = 'http://example.com/share/example/';
+        if (player.scenes.length > 0) {
+            shareURL += '?journey=' + encodeURIComponent(player.scenes.join(','));
+        }
+        return shareURL;
+    }
+
+    function openShareWindow(url, options) {
+        var targetUrl = url;
+        for (var k in options) {
+            if (options.hasOwnProperty(k))
+                targetUrl += k + '=' + options[k] + '&';
+        }
+
+        window.open(
+            targetUrl,
+            'Share',
+            'width=640,height=500,resizable,scrollbars=yes,status=1'
+        );
+    }
+
+    function shareTwitter(event) {
+        event.preventDefault();
+        var options = {
+            related: 'guardian',
+            text: 'Refugee journey tweet text',
+            via: 'guardian',
+            url: getShareURL(),
+            hashtags: 'TEST,HASH,TAGS'
+        };
+
+        openShareWindow('https://twitter.com/share?', options);
+    }
+
+
+    function shareFacebook(event) {
+        event.preventDefault();
+        var options = {
+            'p[title]': 'PAGE TITLE',
+            'p[summary]': 'Refugee journey SUMMARY TEXT',
+            'p[url]': getShareURL(),
+            'p[images][0]': 'http://placehold.it/960x500'
+        };
+
+        openShareWindow('http://www.facebook.com/sharer.php?s=100&', options);
+    }
 
     function init() {
         setupDOM();
 
-        initialStory = getParameterByName('journey');
-        if (initialStory === "") {
-            newGame();
+        var userProvidedScenes = getParameterByName('journey').split(',');
+
+        if (userProvidedScenes.length > 0 && areValidScenes(userProvidedScenes)) {
+            testimonies(userProvidedScenes);
         } else {
-            testimonies(initialStory.split(','));
+            newGame();
         }
     }
+
+
 
     init();
     return this;
