@@ -2,7 +2,8 @@ var JOURNEY = JOURNEY || {};
 JOURNEY.data = {
     s0: {
         title: 'Aleppo',
-        img: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/12/18/1387371321532/Syrian-civilians-flee-the-001.jpg',
+        coverImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/12/18/1387371321532/Syrian-civilians-flee-the-001.jpg',
+        insertImg: 'http://maps.googleapis.com/maps/api/staticmap?center=sweden&zoom=11&scale=false&size=300x300&maptype=terrain&sensor=false&format=png&visual_refresh=true',
         contentFile: 'aleppo',
         choice: {
             text: 'Do you decide to try and reach Europe by any means necessary? Or do you decide it would be safer to travel overland to the nearest country, Turkey, and seek refuge there?',
@@ -18,7 +19,7 @@ JOURNEY.data = {
     s2: {
         title: 'Asylum',
         contentFile: 'asylum_1',
-        img: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/12/18/1387371493923/Syrian-civilians-leave-wi-001.jpg',
+        coverImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/12/18/1387371493923/Syrian-civilians-leave-wi-001.jpg',
         choice: {
             text: 'So how do you get there? Do you decide that the safest and easiest way to travel is by plane? You have some money saved and could fly to Stockholm. Or do you decide to travel overland, through Turkey and into the nearest EU country, Greece? Perhaps you will be able to get resettled directly from a camp along the way if you get in touch with the UNHCR. ',
             options: [
@@ -46,7 +47,7 @@ JOURNEY.data = {
     s4: {
         title: 'Turkey',
         contentFile: 'turkey',
-        img: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/12/18/1387371689516/Syrian-children-refugees--001.jpg',
+        coverImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/12/18/1387371689516/Syrian-children-refugees--001.jpg',
         choice: {
             text: 'You have new choices to make. You can stay in Turkey and hope that for resettlement through the UNHCR resettlement programme, which moves refugees directly into European countries with full support to build a new life. Or you can take a dangerous route overland into the EU and apply for asylum once there. To do this you would probably have to cross the border into Greece illegally.',
             options: [
@@ -60,7 +61,7 @@ JOURNEY.data = {
     s5: {
         title: 'Resettlement',
         contentFile: 'Resettlement',
-        img: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/12/18/1387371794897/People-walk-inside-Contai-001.jpg',
+        coverImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/12/18/1387371794897/People-walk-inside-Contai-001.jpg',
         asset: 'start',
         choice: {
             text: '1 – You decide to stay in Turkey, it’s not perfect but it’s safe and a better option than living under mortar attack in Syria or taking a dangerous journey overland into Europe. (GO TO s 5)2 – You decide you will take the overland route through Greece, the nearest country and the most common illegal entry point into the EU. (GO TO s 6)',
@@ -95,7 +96,7 @@ JOURNEY.data = {
     s7: {
         title: 'Into Greece',
         contentFile: 'into_greece',
-        img: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/12/18/1387383221567/Immigrants-walk-on-the-hi-001.jpg',
+        coverImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/12/18/1387383221567/Immigrants-walk-on-the-hi-001.jpg',
         asset: 'start',
         choice: {
             text: 'You know that the borders to leave Greece are watched to stop irregular migrants leaving as well as entering, so you could claim asylum here rather than put your children through more difficult travelling.	Or you could keep going to Sweden, which means avoiding detection by Greek border guards. Migrants without refugee status in Greece are frequently rounded up and detained.',
@@ -124,7 +125,7 @@ JOURNEY.data = {
     s9: {
         title: 'Bulgaria',
         contentFile: 'bulgaria',
-        img: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/12/18/1387371867715/A-Bulgarian-army-officer--001.jpg',
+        coverImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/12/18/1387371867715/A-Bulgarian-army-officer--001.jpg',
         choice: {
             text: 'You have two options1 Stay in Turkey (Go to s 5)2 Use the last of your savings to try to get into Bulgaria again. (Go to s 11)',
             options: [
@@ -137,7 +138,7 @@ JOURNEY.data = {
     s111: {
         title: 'Bulgaria again',
         contentFile: 'bulgaria_again',
-        img: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/12/18/1387370997705/Bulgarian-border-2-001.jpg',
+        coverImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/12/18/1387370997705/Bulgarian-border-2-001.jpg',
         success: false,
         end: true
     },
@@ -152,7 +153,7 @@ JOURNEY.data = {
     s13: {
         title: 'Through Italy to Sweden',
         contentFile: 'italy_to_sweden',
-        img: '2013/12/18/1387383381267/A-migrant-sits-on-rocks-a-001.jpg',
+        coverImg: '2013/12/18/1387383381267/A-migrant-sits-on-rocks-a-001.jpg',
         choice: {
             text: '?',
             options: [
@@ -209,7 +210,7 @@ JOURNEY.data = {
     s11: {
         title: 'Refugee life in Sweden',
         contentFile: 'refugee_life_in_sweden',
-        img: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/12/18/1387383485866/Residential-housing-block-001.jpg',
+        coverImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/12/18/1387383485866/Residential-housing-block-001.jpg',
         success: true,
         end: true
     }

@@ -4,7 +4,6 @@ JOURNEY.Game = function(el) {
     var container = el;
     var sceneContainerEl;
     var currentScene;
-    var buttonContainer;
 
     function Player() {
         return {
@@ -46,14 +45,22 @@ JOURNEY.Game = function(el) {
             title: (scene.title) ? scene.title : '',
             sceneContent: JOURNEY.content[scene.contentFile],
             choiceText: (scene.choice) ? scene.choice.text : '',
-            buttons: (scene.choice) ? scene.choice.options: ''
+            buttons: (scene.choice) ? scene.choice.options : '',
+            insertImg: scene.insertImg
         });
-        var sceneEl = $(sceneHTML);
-        sceneEl.css('background-image', (scene.img) ? 'url(' + scene.img + ')' : '');
-        sceneContainerEl.append(sceneEl);
-        sceneEl.get()[0].scrollIntoView();
 
-        buttonContainer = $('.button-container', sceneEl);
+        var sceneEl = $(sceneHTML);
+
+        if (scene.coverImg)
+            sceneEl.css('background-image', 'url(' + scene.coverImg + ')');
+
+        sceneContainerEl.append(sceneEl);
+
+        // Animate new scene into view
+        $('html, body').stop();
+        $('html, body').animate({
+            scrollTop: sceneEl.offset().top
+        }, 800);
 
         if (scene.end === true) {
             player.success = scene.success;

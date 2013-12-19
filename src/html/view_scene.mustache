@@ -2,7 +2,12 @@
     <h2 class="scene-title">{{ title }}</h2>
     <div class="scene-inner">
 
-        <div class="scene-copy">{{{ sceneContent }}}</div>
+        <div class="scene-copy">
+            {{#insertImg}}
+                <img src="{{ insertImg }}" class="insert-image" />
+            {{/insertImg}}
+            {{{ sceneContent }}}
+        </div>
 
         <div class="choices">
             <p class="choice-text">{{ choiceText }}</p>

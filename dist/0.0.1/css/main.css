@@ -21,6 +21,10 @@ figure {
     background-size: contain;
     padding: 40% 40px 10px 40px;
     font-family: arial, sans-serif; }
+  .game_wrapper .insert-image {
+    float: right;
+    margin: 0 0 5px 5px;
+    max-width: 150px; }
   .game_wrapper .scene-title {
     background: rgba(0, 0, 0, 0.6);
     color: white;
