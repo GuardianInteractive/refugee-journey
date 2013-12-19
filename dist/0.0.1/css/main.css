@@ -30,29 +30,16 @@ figure {
     background: white;
     padding: 30px;
     overflow: hidden; }
-  .game_wrapper .scene_text {
-    padding: 20px;
-    background-color: #887733;
+  .game_wrapper .scene-copy {
     margin: 0;
     margin-top: 10px; }
-  .game_wrapper .testimony {
-    padding: 10px;
-    background: #eeeeee;
-    color: #444444;
-    float: left;
-    width: 45%;
-    overflow: hidden; }
-  .game_wrapper .scene-copy, .game_wrapper .choices {
-    clear: right;
-    float: right;
-    width: 45%; }
   .game_wrapper .choices {
     border-top: 4px solid #999999;
     padding-top: 10px;
     font-size: 16px;
     font-weight: bold;
     margin-top: 20px; }
-  .game_wrapper .choice_btn {
+  .game_wrapper .choice-btn {
     font-family: monospace;
     border: 1px solid white;
     background-color: black;
@@ -60,10 +47,10 @@ figure {
     cursor: pointer;
     font-size: 14px;
     padding: 6px 20px; }
-    .game_wrapper .choice_btn.disabled {
+    .game_wrapper .choice-btn.disabled {
       color: #d5d5d5;
       background-color: #eaeaea; }
-      .game_wrapper .choice_btn.disabled.picked {
+      .game_wrapper .choice-btn.disabled.picked {
         color: gainsboro;
         background-color: #a0a0a0; }
   .game_wrapper button:hover {

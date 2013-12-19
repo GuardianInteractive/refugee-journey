@@ -23,7 +23,7 @@ module.exports = function(grunt) {
             },
             views: {
                 files: ['src/html/*.mustache'],
-                tasks: ['mustache']
+                tasks: ['mustache', 'js']
             }
         },
 
@@ -68,11 +68,11 @@ module.exports = function(grunt) {
                     verbose: true
                 }
             },
-            testimonies : {
-                src: 'src/html/testimonies/',
-                dest: 'src/js/app/testimonies.js',
+            content : {
+                src: 'src/html/content/',
+                dest: 'src/js/app/content.js',
                 options: {
-                    prefix: 'var JOURNEY = JOURNEY || {}; JOURNEY.testimonies = ',
+                    prefix: 'var JOURNEY = JOURNEY || {}; JOURNEY.content = ',
                     postfix: ';',
                     verbose: true
                 }

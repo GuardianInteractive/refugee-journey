@@ -5,27 +5,18 @@ JOURNEY.Game = function(el) {
     var container = el;
     var sceneContainerEl;
     var sceneContentEl;
-    var textboxEl;
     var choiceEl;
     var choiceTextEl;
-    var outcomesEl;
     var gameWrapperEl;
-    var testimonyEl;
-    var testimoniesWrapperEl;
-
-
-    var currentScene = 'start';
+    var currentScene;
     var buttonContainer;
-    var previousPlaythroughs = [];
 
     function Player() {
         return {
             scenes: [],
-            items: [],
             success: null
         };
     }
-
     var player = new Player();
 
     function setupDOM() {
@@ -33,40 +24,35 @@ JOURNEY.Game = function(el) {
         gameWrapperEl = $('.game_wrapper', container);
         sceneContainerEl = $('.scene_container', container);
         sceneContentEl = $('.scene_content', container);
-        textboxEl = $('.scene_text', container);
         choiceTextEl = $('.choice_text', container);
         buttonContainer = $('.button_container', container);
-        outcomesEl = $('.debug_output', container);
-        testimoniesWrapperEl = $('.testimonies', container);
-        testimonyEl = $('.testimony_steps');
-
-        $('.testimonies_restart_btn').on('click', newGame);
 
         choiceEl = document.createElement('button');
         choiceEl.classList.add('choice_btn');
 
-        $('.twitter_share').on('click', shareTwitter);
-        $('.facebook_share').on('click', shareFacebook);
+        sceneContainerEl.on('click', '.restart', newGame);
+        sceneContainerEl.on('click', '.share-facebook', shareFacebook);
+        sceneContainerEl.on('click', '.share-twitter', shareTwitter);
     }
 
     function newGame() {
         player = new Player();
+        sceneContainerEl.empty();
         currentScene = 'start';
-        gameWrapperEl.show();
-        testimoniesWrapperEl.hide();
         render();
     }
 
     function render() {
         var scene = JOURNEY.data[currentScene];
 
-        if (currentScene === 'start')
-            player = new Player();
+        if (typeof scene === 'undefined') {
+            console.log('Missing scene: %s', currentScene);
+            return;
+        }
 
         var sceneHTML = Mustache.render(JOURNEY.html.view_scene, {
-            title: scene.title,
-            testimony: JOURNEY.testimonies[scene.testimony],
-            sceneText: scene.text,
+            title: (scene.title) ? scene.title : '',
+            sceneContent: JOURNEY.content[scene.contentFile],
             choiceText: (scene.choice) ? scene.choice.text : ''
         });
         var sceneEl = $(sceneHTML);
@@ -74,57 +60,32 @@ JOURNEY.Game = function(el) {
         sceneContainerEl.append(sceneEl);
         sceneEl.get()[0].scrollIntoView();
 
-        buttonContainer = $('.button_container', sceneEl);
+        buttonContainer = $('.button-container', sceneEl);
 
-        $('.choice_btn', sceneContainerEl).off().attr('disabled', true).addClass('disabled');
+        $('.choice-btn', sceneContainerEl).off().attr('disabled', true).addClass('disabled');
 
         if (scene.choice) {
             addChoiceBtns(scene.choice.options);
         }
 
         if (scene.end === true) {
+            // TODO: Show share and replay options
             player.success = scene.success;
-            previousPlaythroughs.push(player);
-            //addChoiceBtn('Start again', 'start');
-            //testimonies(player.scenes);
-            currentScene = 'end';
-            return render();
-
+            $('.scene-inner', sceneEl).append($(JOURNEY.content.share_and_replay));
         }
 
         updatePlayer();
     }
 
-    function testimonies(scenes) {
-        testimonyEl.empty();
-        gameWrapperEl.hide();
-        testimoniesWrapperEl.show();
+    function loadScenes(scenes) {
+        sceneContainerEl.empty();
 
         scenes.forEach(function(sceneName) {
             if (!JOURNEY.data.hasOwnProperty(sceneName))
                 return;
-
-            var viewData = {
-                heading: JOURNEY.data[sceneName].title,
-                html: ''
-            };
-
-            if (JOURNEY.data[sceneName].hasOwnProperty('testimony'))
-                viewData.html += JOURNEY.testimonies[JOURNEY.data[sceneName].testimony];
-
-            var output = Mustache.render(JOURNEY.html.view_testimony, viewData);
-            testimonyEl.append(output);
+            currentScene = sceneName;
+            render();
         });
-    }
-
-    function isPassportValid() {
-        if (-1 !== player.items.indexOf('cheepPassport'))
-            return Math.random() < 0.5;
-
-        if (-1 !== player.items.indexOf('expensivePassport'))
-            return Math.random() < 0.90;
-
-        return false;
     }
 
     function updatePlayer() {
@@ -138,7 +99,7 @@ JOURNEY.Game = function(el) {
     }
 
     function addChoiceBtn(text, destination) {
-        var btnEL = $('<button class="choice_btn"></button>').text(text);
+        var btnEL = $('<button class="choice-btn"></button>').text(text);
         btnEL.on('click',function() {
             $(this).addClass('picked');
             clickedChoice(destination);
@@ -219,7 +180,7 @@ JOURNEY.Game = function(el) {
         var userProvidedScenes = getParameterByName('journey').split(',');
 
         if (userProvidedScenes.length > 0 && areValidScenes(userProvidedScenes)) {
-            testimonies(userProvidedScenes);
+            loadScenes(userProvidedScenes);
         } else {
             newGame();
         }

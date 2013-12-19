@@ -39,26 +39,9 @@ figure {
         overflow: hidden;
     }
 
-    .scene_text {
-        padding: 20px;
-        background-color: #873;
+    .scene-copy {
         margin: 0;
         margin-top: 10px;
-    }
-
-    .testimony {
-        padding: 10px;
-        background: #EEE;
-        color: #444;
-        float: left;
-        width: 45%;
-        overflow: hidden;
-    }
-
-    .scene-copy, .choices {
-        clear: right;
-        float: right;
-        width: 45%;
     }
 
     .choices {
@@ -69,7 +52,7 @@ figure {
         margin-top: 20px;
     }
 
-    .choice_btn {
+    .choice-btn {
         font-family: monospace;
         border: 1px solid #fff;
         background-color: #000;
