@@ -3,10 +3,6 @@ JOURNEY.Game = function(el) {
     'use strict';
     var container = el;
     var sceneContainerEl;
-    var sceneContentEl;
-    var choiceEl;
-    var choiceTextEl;
-    var gameWrapperEl;
     var currentScene;
     var buttonContainer;
 
@@ -20,18 +16,13 @@ JOURNEY.Game = function(el) {
 
     function setupDOM() {
         container.innerHTML = JOURNEY.html.base_layout;
-        gameWrapperEl = $('.game_wrapper', container);
         sceneContainerEl = $('.scene_container', container);
-        sceneContentEl = $('.scene_content', container);
-        choiceTextEl = $('.choice_text', container);
-        buttonContainer = $('.button_container', container);
 
-        choiceEl = document.createElement('button');
-        choiceEl.classList.add('choice_btn');
-
+        // Bind events
         sceneContainerEl.on('click', '.restart', newGame);
         sceneContainerEl.on('click', '.share-facebook', shareFacebook);
         sceneContainerEl.on('click', '.share-twitter', shareTwitter);
+        sceneContainerEl.on('click', '.choice-btn', function() { clickedChoice(this); });
     }
 
     function newGame() {
@@ -49,10 +40,13 @@ JOURNEY.Game = function(el) {
             return;
         }
 
+        $('.choice-btn', sceneContainerEl).off().attr('disabled', true).addClass('disabled');
+
         var sceneHTML = Mustache.render(JOURNEY.html.view_scene, {
             title: (scene.title) ? scene.title : '',
             sceneContent: JOURNEY.content[scene.contentFile],
-            choiceText: (scene.choice) ? scene.choice.text : ''
+            choiceText: (scene.choice) ? scene.choice.text : '',
+            buttons: (scene.choice) ? scene.choice.options: ''
         });
         var sceneEl = $(sceneHTML);
         sceneEl.css('background-image', (scene.img) ? 'url(' + scene.img + ')' : '');
@@ -60,12 +54,6 @@ JOURNEY.Game = function(el) {
         sceneEl.get()[0].scrollIntoView();
 
         buttonContainer = $('.button-container', sceneEl);
-
-        $('.choice-btn', sceneContainerEl).off().attr('disabled', true).addClass('disabled');
-
-        if (scene.choice) {
-            addChoiceBtns(scene.choice.options);
-        }
 
         if (scene.end === true) {
             player.success = scene.success;
@@ -90,23 +78,8 @@ JOURNEY.Game = function(el) {
         player.scenes.push(currentScene);
     }
 
-    function addChoiceBtns(options) {
-        options.map(function(option) {
-            addChoiceBtn(option.text, option.destination);
-        });
-    }
-
-    function addChoiceBtn(text, destination) {
-        var btnEL = $('<button class="choice-btn"></button>').text(text);
-        btnEL.on('click',function() {
-            $(this).addClass('picked');
-            clickedChoice(destination);
-        });
-        buttonContainer.append(btnEL);
-    }
-
-    function clickedChoice(dest) {
-        currentScene = dest;
+    function clickedChoice(elm) {
+        currentScene = $(elm).data('destination');
         render();
     }
 
@@ -159,7 +132,6 @@ JOURNEY.Game = function(el) {
         openShareWindow('https://twitter.com/share?', options);
     }
 
-
     function shareFacebook(event) {
         event.preventDefault();
         var options = {
@@ -182,8 +154,6 @@ JOURNEY.Game = function(el) {
             newGame();
         }
     }
-
-
 
     init();
     return this;

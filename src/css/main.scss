@@ -64,13 +64,12 @@ figure {
         &.disabled {
             color: #d5d5d5;
             background-color: #eaeaea;
+            cursor: default;
             &.picked {
                 color: #dcdcdc;
                 background-color: #a0a0a0;
             }
         }
-
-
     }
 
     button:hover {

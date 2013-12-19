@@ -6,7 +6,13 @@
 
         <div class="choices">
             <p class="choice-text">{{ choiceText }}</p>
-            <div class="button-container"></div>
+            <div class="button-container">
+                {{#buttons}}
+                    <button class="choice-btn" data-destination="{{ destination }}">
+                        {{ text }}
+                    </button>
+                {{/buttons}}
+            </div>
         </div>
     </div>
 </div>
