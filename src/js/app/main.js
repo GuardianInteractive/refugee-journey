@@ -37,7 +37,7 @@ JOURNEY.Game = function(el) {
     function newGame() {
         player = new Player();
         sceneContainerEl.empty();
-        currentScene = 'start';
+        currentScene = 's0';
         render();
     }
 
@@ -68,7 +68,6 @@ JOURNEY.Game = function(el) {
         }
 
         if (scene.end === true) {
-            // TODO: Show share and replay options
             player.success = scene.success;
             $('.scene-inner', sceneEl).append($(JOURNEY.content.share_and_replay));
         }
