@@ -151,7 +151,7 @@ JOURNEY.data = {
 
     scene111: {
         title: 'Bulgaria again',
-        img: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/12/18/1387370997705/Bulgarian-border-2-001.jpg,'
+        img: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/12/18/1387370997705/Bulgarian-border-2-001.jpg',
         text: 'This time, when you reach the border the guards that pick you up take you to one of several camps that have been set up to house Syrian refugees, you are told that the camp is called Harmanli. It is an open air detention centre and you are not allowed to leave, so there is no chance to move further into Europe or to turn back and return to Turkey. The conditions are extremely bad, with little or no official presence, no reception process and very little food. Many thousands of migrants, not only Syrians, but Afghans, Bangladeshis and even some Africans have started to take what was previously a barely used route into the EU, from Turkey and into Bulgaria. An estimated 5,000 refugees from Syria arrived between January and November 2013 (Amnesty int. figures) In a recent visit, the Guardian found a complete lack of official support for newly arrived refugees, and very poor conditions inside. One heavily pregnant woman, separated from her husband in Turkey, was being refused permission to leave the camp to give birth. VIDEO INSERT – film in Harmani, interviews with Syrians detained there. There is no way forward or back for you, the UNHCR is pushing for improved conditions in Bulgaria, and the government has promised to provide more support, but for now, you are stuck.',
         asset: 'start',
         success: false,
