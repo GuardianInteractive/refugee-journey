@@ -19,10 +19,10 @@ module.exports = function(grunt) {
             },
             html: {
                 files: ['src/*.html'],
-                tasks: ['copy:html']
+                tasks: ['replace']
             },
             views: {
-                files: ['src/html/*.mustache'],
+                files: ['src/html/**/*.mustache'],
                 tasks: ['mustache', 'js']
             }
         },
@@ -39,13 +39,6 @@ module.exports = function(grunt) {
         },
 
         copy: {
-            html: {
-                src: 'src/*.html',
-                dest: 'dist/',
-                flatten: true,
-                expand: true
-            },
-
             imgs: {
                 src: 'src/imgs/*',
                 dest: 'dist/imgs/',
@@ -98,7 +91,7 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     flatten: true,
-                    src: ['src/js/boot.js', 'src/index.html'],
+                    src: ['src/js/boot.js', 'src/*.html'],
                     dest: 'dist/'
                 }]
             }
@@ -110,7 +103,8 @@ module.exports = function(grunt) {
                     port: 9999,
                     base: 'dist',
                     hostname: '*',
-                    open: true
+                    open: true,
+                    livereload: (isDev) ? true : false
                 }
             }
         },

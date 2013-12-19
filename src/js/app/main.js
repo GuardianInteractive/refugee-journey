@@ -1,7 +1,6 @@
 var JOURNEY = JOURNEY || {};
 JOURNEY.Game = function(el) {
     'use strict';
-
     var container = el;
     var sceneContainerEl;
     var sceneContentEl;
@@ -176,7 +175,6 @@ JOURNEY.Game = function(el) {
 
     function init() {
         setupDOM();
-
         var userProvidedScenes = getParameterByName('journey').split(',');
 
         if (userProvidedScenes.length > 0 && areValidScenes(userProvidedScenes)) {
