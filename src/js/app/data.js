@@ -3,7 +3,7 @@ JOURNEY.data = {
     start: {
         title: 'Aleppo',
         testimony: 'start',
-        img: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/12/18/1387383572368/9ec0dd8f-b2ec-4fea-9c6f-773aa74943a6-620x411.jpeg',
+        img: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/12/18/1387371321532/Syrian-civilians-flee-the-001.jpg',
         text: 'Your name is Karima. Your are a 28-year-old Sunni woman from Aleppo, and you have two children, a girl aged 10 and a boy aged 14. Your husband was killed in a mortar attack three months ago. You now realise you must, for your children’s sake, get out of Syria. You know many people who have left Syria, most to neighbouring countries where they are in refugee camps and some who have made it to northern European countries and been given refugee protection. You have some money you could use for your journey so now your choices begin.',
         choice: {
             text: 'Do you decide to try and reach Europe by any means necessary? Or do you decide it would be safer to travel overland to the nearest country, Turkey, and seek refuge there?',
@@ -19,6 +19,7 @@ JOURNEY.data = {
 
     scene2: {
         title: 'Asylum',
+        img: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/12/18/1387371493923/Syrian-civilians-leave-wi-001.jpg',
         text: 'You do your research and find out that in September, Sweden announced that it would give permanent residence to all Syrian refugees. Since early 2012, Sweden has received about 14,700 asylum applications from Syrians. Among them are member of your family, who you speak to regularly on the phone.They tell you that they are being  given support in building a new life in Sweden and that they would help you if you came.  They will wire you money along the way, to help make your savings go further.Unfortunately there is a catch. In order to apply for asylum in Sweden you need to actually get there first. This is true of most northern European countries. The UK and France for example have a high recognition rate for Syrians who apply for asylum within their borders, but asylum applications are not taken at foreign embassies. There is a relatively small resettlement programme in place, moving refugees directly from camps to European countries but you would have to be in a refugee camp to find out whether you could apply to be part of this.		( XXX Put stat in about asylum applications from Syrians across whole of Europe. )',
         choice: {
             text: 'So how do you get there? Do you decide that the safest and easiest way to travel is by plane? You have some money saved and could fly to Stockholm. Or do you decide to travel overland, through Turkey and into the nearest EU country, Greece? Perhaps you will be able to get resettled directly from a camp along the way if you get in touch with the UNHCR. ',
@@ -48,6 +49,7 @@ JOURNEY.data = {
 
     scene4: {
         title: 'Turkey',
+        img: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/12/18/1387371689516/Syrian-children-refugees--001.jpg',
         text: 'You walk across the Turkish border and are met by UNHCR officials who take you to a refugee camp and register you. You are now among around 600,000 Syrians registered as refugees in Turkey. Turkey has an opt out from the Geneva Convention and does not grant asylum to people from outside the European Union. So although you are given support in the camp you will never have the right to work here. Other refugees around you are talking about making the dangerous journey overland into the EU, to join family members and try and get international protection, which carries with it the right to work and live a normal life.(video insert from Turkey?)',
         choice: {
             text: 'You have new choices to make. You can stay in Turkey and hope that for resettlement through the UNHCR resettlement programme, which moves refugees directly into European countries with full support to build a new life. Or you can take a dangerous route overland into the EU and apply for asylum once there. To do this you would probably have to cross the border into Greece illegally.',
@@ -63,6 +65,7 @@ JOURNEY.data = {
 
     scene5: {
         title: 'Resettlement',
+        img: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/12/18/1387371794897/People-walk-inside-Contai-001.jpg',
         text: 'The UNHCR has called for 30,000 of the most vulnerable Syrian refugees to be directly resettled into western countries via a screening process that is taking place in camps across the region. Unfortunately for you, the numbers being offered this chance are very low compared to the numbers fleeing Syria. Excluding Germany, the remaining 27 EU members states have offered to take only 2,340 refugees directly from Syria. Eighteen member states, including the UK and Italy, have refused to take part, drawing condemnation from leading refugee agencies.VIDEO INSERT - Somali man now settled in Sweden. ??You are not considered vulnerable enough, as the few places are being offered to families with sick or disabled children, or a parent who is struggling to cope with looking after children. The response so far has been criticised as ’shameful’ by Amnesty International and ’feeble’ by UNHCR. The country that has offered the most places is Germany, which has said it will take 10,000 people directly from camps.You are in good health as are your children so you now have two choices.',
         asset: 'start',
         choice: {
@@ -99,6 +102,7 @@ JOURNEY.data = {
 
     scene7: {
         title: 'Into Greece',
+        img: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/12/18/1387383221567/Immigrants-walk-on-the-hi-001.jpg',
         text: 'This time, after paying the smugglers again, you are one of the gradually reducing number who do make it over the Evros border and into Greece. (do we have a story to illustrate this???) After crossing the border you travel to Athens (how?). Friends in the Syrian community in Istanbul have given you the contact details of a church that helps refugee families so you head there. Now you are here you have two choices.',
         asset: 'start',
         choice: {
@@ -130,6 +134,7 @@ JOURNEY.data = {
 
     scene9: {
         title: 'Bulgaria',
+        img: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/12/18/1387371867715/A-Bulgarian-army-officer--001.jpg',
         text: 'You pay a people smuggler to lead you with a group of people through the dense forests on the border between Turkey and Bulgaria.When you reach the Bulgarian border, armed men appear and line you all up and ask for ID. They then make you all get into the back of their van and they drive you back towards (Turkish town? need to check) and leave you there. All the children are crying, as you walk back towards XX (town?). Eventually you make it back to Istanbul.Even though such ’push backs’ are illegal, there have been reports of Syrians being turned away at the Bulgarian border, or driven straight back to Turkey, with no access to a fair asylum procedure.VIDEO INSERT – Story from Bulgaria / Turkey of Syrians talking about illegal push backs.',
         asset: 'start',
         choice: {
@@ -146,6 +151,7 @@ JOURNEY.data = {
 
     scene111: {
         title: 'Bulgaria again',
+        img: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/12/18/1387370997705/Bulgarian-border-2-001.jpg,'
         text: 'This time, when you reach the border the guards that pick you up take you to one of several camps that have been set up to house Syrian refugees, you are told that the camp is called Harmanli. It is an open air detention centre and you are not allowed to leave, so there is no chance to move further into Europe or to turn back and return to Turkey. The conditions are extremely bad, with little or no official presence, no reception process and very little food. Many thousands of migrants, not only Syrians, but Afghans, Bangladeshis and even some Africans have started to take what was previously a barely used route into the EU, from Turkey and into Bulgaria. An estimated 5,000 refugees from Syria arrived between January and November 2013 (Amnesty int. figures) In a recent visit, the Guardian found a complete lack of official support for newly arrived refugees, and very poor conditions inside. One heavily pregnant woman, separated from her husband in Turkey, was being refused permission to leave the camp to give birth. VIDEO INSERT – film in Harmani, interviews with Syrians detained there. There is no way forward or back for you, the UNHCR is pushing for improved conditions in Bulgaria, and the government has promised to provide more support, but for now, you are stuck.',
         asset: 'start',
         success: false,
@@ -166,6 +172,7 @@ JOURNEY.data = {
 
     scene13: {
         title: 'Through Italy to Sweden',
+        img: '2013/12/18/1387383381267/A-migrant-sits-on-rocks-a-001.jpg',
         text: ' Even though you don’t have documents allowing you to travel legally within the EU, you follow a path many others have taken and try to travel by boat via the Adriatic to Italy, from there you will be able to get a train onwards into Europe. You go to the main Greek port, Patras and arrive in Bari in Italy. Un (need to do a bit more research here on what happens on this journey) Last year, some European countries threatened Greece with removal from the Schengen agreement if they did not tighten their borders. Greece is under enormous pressure to stop migrants crossing it’s borders, as is Turkey. Illegal push backs have been reported on this Adriatic route. You now have two choices. 1 Stay in Patras and try again. (Go to scene 14) 2 You can’t face any more travelling so decide to stay in Athens for now. (Go to scene 10)',
         asset: 'start',
         choice: {
@@ -228,6 +235,7 @@ JOURNEY.data = {
 
     scene11: {
         title: 'Refugee life in Sweden',
+        img: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/12/18/1387383485866/Residential-housing-block-001.jpg',
         text: 'You are given a place to stay in a hostel for families, put in touch with Syrian support groups and given access to a basic benefit that will help you survive until your asylum claim is heard. You explain to the officials why you left Syria and within a month you are told you have permanent residence. You are given social housing and free Swedish lessons and told that once you speak reasonable Swedish you will be given help finding a job. VIDEO INSERT – back to Somalia guy who was resettled, talking about life in Sweden? Although there is now a Common EU Asylum System, which came into operation in summer 2014, nobody denies that the way refugees are treated varies wildly from country to country. In the UK, Sweden and Germany, asylum seekers are given housing while their claim is processed, and support once they are granted refugee status. This is not always the case in Greece, Italy or the eastern European countries. Experts and EU politicians continually warn that as long as these differences exist, people will continue to make dangerous journeys overland to reach a country that promises safety and support. ((VIDEO LINK – CALAIS??? recent footage from protests in Calais? Calais film from a few years ago? Interview in Rome - with man explaining that system is different across the whole of Europe?)',
         success: true,
         end: true
