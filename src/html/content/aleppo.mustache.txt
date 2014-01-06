@@ -1,0 +1,15 @@
+<p>Your name is Karima. You are a 28-year-old Sunni woman from Aleppo, and you have two children, a girl aged 10 and a boy aged 14.</p>
+
+<h2>Audio sample</h2>
+<audio controls="" preload="none">
+    <source src="http://www.html5rocks.com/en/tutorials/audio/quick/test.mp3" type="audio/mpeg">
+    <source src="http://www.html5rocks.com/en/tutorials/audio/quick/test.ogg" type="audio/ogg">
+</audio>
+
+
+<p>Your husband was killed in a mortar attack three months ago and you realise you must leave Syria for your children’s sake. You know many people who have left Syria, most to neighbouring countries where they are in refugee camps and some who have reached northern European countries and been given refugee protection.</p>
+
+
+
+
+<p>You have some money you could use for your journey and so now your choices begin.</p>
