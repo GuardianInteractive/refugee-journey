@@ -4,6 +4,7 @@ JOURNEY.Game = function(el) {
     var container = el;
     var sceneContainerEl;
     var currentScene;
+    var cachedImages = [];
 
     function Player() {
         return {
@@ -31,6 +32,22 @@ JOURNEY.Game = function(el) {
         render();
     }
 
+    function cacheNextImages(scene) {
+        if (!scene.choice || !scene.choice.options)
+            return;
+
+        scene.choice.options.forEach(function(option) {
+            var nextScene = JOURNEY.data[option.destination];
+            if (!option.destination || nextScene === undefined || !nextScene.coverImg)
+                return;
+
+            var imgPath = JOURNEY.data[option.destination].coverImg;
+            var img = new Image();
+            img.src = imgPath;
+            cachedImages.push(img);
+        });
+    }
+
     function render() {
         var scene = JOURNEY.data[currentScene];
 
@@ -50,6 +67,8 @@ JOURNEY.Game = function(el) {
         });
 
         var sceneEl = $(sceneHTML);
+
+        cacheNextImages(scene);
 
         if (scene.coverImg)
             sceneEl.css('background-image', 'url(' + scene.coverImg + ')');

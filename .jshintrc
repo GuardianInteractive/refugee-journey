@@ -1,9 +1,11 @@
 {
-    "curly": true,
+    "curly": false,
     "eqnull": true,
     "eqeqeq": true,
     "undef": true,
     "globals": {
-        "jQuery": true
+        "$": true,
+        "console": true,
+        "Mustache": true
     }
 }
