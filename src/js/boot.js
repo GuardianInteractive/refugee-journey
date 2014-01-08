@@ -13,6 +13,11 @@ define([], function() {
          *
          **/
         boot : function(el, context, config) {
+            var loadingEl = document.createElement('p');
+            loadingEl.setAttribute('style', 'text-align: center; color: #999;');
+            loadingEl.innerHTML = 'Loading...';
+            el.appendChild(loadingEl);
+
             LazyLoad.css('@@path/css/main.css');
             LazyLoad.js([
                 '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js',

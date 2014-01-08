@@ -11,7 +11,7 @@
 
     <script>
         var require = curl;
-        require(['boot.js']).then(function(app) {
+        require(['@@rootboot.js']).then(function(app) {
             var el = document.querySelector('.gi-interactive');
             app.boot(el, window, {});
         });

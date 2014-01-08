@@ -84,6 +84,7 @@ JOURNEY.Game = function(el) {
         if (scene.end === true) {
             player.success = scene.success;
             $('.scene-inner', sceneEl).append($(JOURNEY.content.share_and_replay));
+            sceneEl.addClass('end');
         }
 
         updatePlayer();

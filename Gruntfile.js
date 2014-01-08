@@ -77,12 +77,17 @@ module.exports = function(grunt) {
                 patterns: [
                     {
                         match: 'path',
-                        replacement: (isDev) ? '/<%= pkg.version %>' : '<%= pkg.remotePath %>/<%= pkg.version %>',
+                        replacement: (isDev) ? '/<%= pkg.version %>' : '<%= pkg.remotePath %><%= pkg.version %>',
                         expression: false   // simple variable lookup
                     },
                     {
                         match: 'version',
                         replacement: '<%= pkg.version %>',
+                        expression: false   // simple variable lookup
+                    },
+                    {
+                        match: 'root',
+                        replacement: (isDev) ? '/' : '<%= pkg.remotePath %>',
                         expression: false   // simple variable lookup
                     }
                 ]
