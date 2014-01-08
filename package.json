@@ -1,7 +1,7 @@
 {
-  "name": "antarctica",
+  "name": "refugee-choices-interactive",
   "version": "0.0.1",
-  "remotePath": "https://s3.amazonaws.com/next-gen/world/ng-interactive/2014/jan/refugee-choices-interactive/",
+  "remotePath": "http://interactive.guim.co.uk/next-gen/world/ng-interactive/2014/jan/refugee-choices-interactive/",
   "S3Path": "next-gen/world/ng-interactive/2014/jan/refugee-choices-interactive/",
   "devDependencies": {
     "grunt": "~0.4.2",
