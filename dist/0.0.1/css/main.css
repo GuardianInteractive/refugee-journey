@@ -27,8 +27,8 @@ figure {
     margin: 0 0 5px 5px;
     max-width: 150px; }
   .game_wrapper .scene-title {
-    background: rgba(0, 0, 0, 0.5);
-    color: rgba(255, 255, 255, 0.9);
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
     padding: 10px;
     margin: 0;
     font-size: 12px;
