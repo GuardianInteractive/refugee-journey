@@ -5,8 +5,7 @@ figure {
 }
 
 .game_wrapper {
-    background: #EEE;
-    color: #222;
+    color: #565656;
     font-size: 14px;
     line-height: 16px;
     position: relative;
@@ -22,9 +21,15 @@ figure {
         background-image: url(http://placehold.it/940x530);
         background-repeat: no-repeat;
         background-size: contain;
-        padding: 40% 40px 10px 40px;
-        font-family: arial, sans-serif;
+        padding: 40% 40px 0 40px;
+        font-family: Georgia, serif;
+
+        &.disabled {
+            opacity:0.5;
+        }
     }
+
+    
 
     .insert-image {
         float: right;
@@ -33,14 +38,17 @@ figure {
     }
 
     .scene-title {
-        background: rgba(0, 0, 0, 0.6);
-        color: #FFF;
+        background: rgba(0, 0, 0, 0.8);
+        color: rgba(255,255,255,0.6);
         padding: 10px;
         margin: 0;
+        font-size:12px;
+        font-weight: normal;
+        font-family: Arial, sans-serif;
     }
 
     .scene-inner {
-        background: #FFF;
+        background: #f8f7f5;
         padding: 30px;
         overflow: hidden;
     }
@@ -50,37 +58,58 @@ figure {
         margin-top: 10px;
     }
 
+    .scene-copy p{
+        color:#565656;
+        font-size:16px;
+        line-height:1.5em;
+    }
+
     .choices {
-        border-top: 4px solid #999;
+        border-top: 1px dotted #999999;
         padding-top: 10px;
         font-size: 16px;
         font-weight: bold;
         margin-top: 20px;
     }
 
+    .choice-text {
+        font-size:16px;
+        font-family:Arial, sans-serif;
+        line-height:1.5em;
+        color:#565656; 
+    }
+    .button-container{
+        width:90%;
+        margin:30px auto 0;
+        text-align:center;
+    }
+
     .choice-btn {
-        font-family: monospace;
-        border: 1px solid #fff;
-        background-color: #000;
-        color: #fff;
+        font-family: Arial, sans-serif;
+        border: 1px solid #CDCBC3;
+        background-color: #F1F1E8;
+        border-radius:3px;
+        color: rgba(51,51,51,0.6);
         cursor: pointer;
-        font-size: 14px;
-        padding: 6px 20px;
+        font-size: 16px;
+        padding: 8px 20px; 
 
         &.disabled {
             color: #d5d5d5;
             background-color: #eaeaea;
+            border:none;
             cursor: default;
             &.picked {
-                color: #dcdcdc;
-                background-color: #a0a0a0;
+                color: #444;
+                opacity:0.5;
+                background-color: #b2b195;
             }
         }
     }
 
     button:hover {
-        background: #999;
-        color: #000;
+        background: #b2b195;
+        border-color:#b2b195;
     }
 
     .outcomes {
