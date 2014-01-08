@@ -18,7 +18,7 @@ figure {
     background-image: url(http://placehold.it/940x530);
     background-repeat: no-repeat;
     background-size: contain;
-    padding: 40% 40px 0 40px;
+    padding: 42% 10px 0 10px;
     font-family: Georgia, serif; }
     .game_wrapper .scene.disabled {
       opacity: 0.5; }
@@ -27,8 +27,8 @@ figure {
     margin: 0 0 5px 5px;
     max-width: 150px; }
   .game_wrapper .scene-title {
-    background: rgba(0, 0, 0, 0.8);
-    color: rgba(255, 255, 255, 0.6);
+    background: rgba(0, 0, 0, 0.5);
+    color: rgba(255, 255, 255, 0.9);
     padding: 10px;
     margin: 0;
     font-size: 12px;
@@ -100,3 +100,10 @@ figure {
   .game_wrapper .updated {
     font-weight: bold;
     color: yellow; }
+
+@media (min-width: 480px) {
+  .game_wrapper .scene {
+    padding: 48% 40px 0 40px;
+    font-family: Georgia, serif; }
+    .game_wrapper .scene.disabled {
+      opacity: 0.5; } }
