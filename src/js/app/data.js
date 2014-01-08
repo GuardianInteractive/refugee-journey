@@ -34,6 +34,7 @@ JOURNEY.data = {
     s21: {
         title: 'Asylum',
         contentFile: 'asylum_2',
+        coverImg: 'http://static.guim.co.uk/sys-images/guardian/Pix/pictures/2014/1/7/1389111546993/Syrian-refugees-travel-by-001.jpg',
         choice: {
             text: 'You have only one choice now. You have to travel overland if you want to leave Syria.',
             options: [
@@ -74,6 +75,7 @@ JOURNEY.data = {
 
     s51: {
         title: 'Staying in Turkey',
+        coverImg: 'http://static.guim.co.uk/sys-images/guardian/Pix/pictures/2014/1/7/1389113268437/Syrians-in-a-refugee-camp-001.jpg',
         contentFile: 'stay_in_turkey',
         asset: 'start',
         success:false,
@@ -83,6 +85,7 @@ JOURNEY.data = {
     s6: {
         title: 'The Greek border',
         contentFile: 'greek_boarder',
+        coverImg: 'http://static.guim.co.uk/sys-images/guardian/Pix/pictures/2014/1/7/1389114189060/A-Greek-soldier-on-a-mili-001.jpg',
         asset: 'start',
         choice: {
             text: 'You can try and get into Greece again. Alternatively, other Syrians in Istanbul tell you that there is another way into the EU, through Bulgaria.',
@@ -110,6 +113,7 @@ JOURNEY.data = {
     s8: {
         title: 'The Greek asylum system',
         contentFile: 'greek_asylum_system',
+        coverImg: 'http://static.guim.co.uk/sys-images/guardian/Pix/pictures/2014/1/7/1389114506126/A-Syrian-refugee-family-i-001.jpg',
         asset: 'start',
         choice: {
             text: '1 Return to Turkey and try to reach Europe via Bulgaria instead (s 11) 2 Try to make a life in Athens, blending into the underground Syrian community there. (s 10) 3 Use your savings to look for fake passports that would get you onto a plane to Stockholm. (s 12)4 You decide to keep moving forward and try to reach Sweden overland,  You don’t want to risk using a false passport so you work out the overland journey, through eastern Europe, Romania and Germany and into Sweden. (s 13)',
@@ -146,6 +150,7 @@ JOURNEY.data = {
     s10: {
         title: 'Life in Athens',
         contentFile: 'life_in_athens',
+        coverImg: 'http://static.guim.co.uk/sys-images/guardian/Pix/pictures/2014/1/7/1389115324731/A-guard-watches-over-ille-001.jpg',
         success: false,
         end: true
     },
@@ -198,6 +203,7 @@ JOURNEY.data = {
     s16: {
         title: 'Overland to Sweden',
         contentFile: 'overland_to_sweden',
+        coverImg: 'http://static.guim.co.uk/sys-images/guardian/Pix/pictures/2014/1/7/1389115450403/The-waterfront-in-Stockho-001.jpg',
         asset: 'start',
         choice: {
             text: 'Next',
