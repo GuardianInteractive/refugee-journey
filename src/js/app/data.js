@@ -8,8 +8,8 @@ JOURNEY.data = {
         choice: {
             text: 'Do you decide to try and reach Europe by any means necessary? Or do you decide it would be safer to travel overland to the nearest country, Turkey, and seek refuge there?',
             options: [
-                {text: 'Europe', destination: 's2'},
-                {text: 'Turkey', destination: 's4'}
+                {text: 'Europe s2', destination: 's2'},
+                {text: 'Turkey s4', destination: 's4'}
 
             ]
 
@@ -17,14 +17,14 @@ JOURNEY.data = {
     },
 
     s2: {
-        title: 'Asylum',
+        title: 'Asylum s2',
         contentFile: 'asylum_1',
         coverImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/12/18/1387371493923/Syrian-civilians-leave-wi-001.jpg',
         choice: {
             text: 'So how do you get there? Do you decide that the safest and easiest way to travel is by plane? You have some money saved and could fly to Stockholm. Or do you decide to travel overland, through Turkey and into the nearest EU country, Greece? Perhaps you will be able to get resettled directly from a camp along the way if you get in touch with the UNHCR. ',
             options: [
-                {text: 'By air', destination: 's3'},
-                {text: 'Overland', destination: 's3'}
+                {text: 'By air s21', destination: 's21'},
+                {text: 'Overland s3', destination: 's3'}
 
             ]
 
@@ -32,13 +32,13 @@ JOURNEY.data = {
     },
 
     s21: {
-        title: 'Asylum',
+        title: 'Asylum s21',
         contentFile: 'asylum_2',
         coverImg: 'http://static.guim.co.uk/sys-images/guardian/Pix/pictures/2014/1/7/1389111546993/Syrian-refugees-travel-by-001.jpg',
         choice: {
             text: 'You have only one choice now. You have to travel overland if you want to leave Syria.',
             options: [
-                {text: 'Next', destination: 's2'}
+                {text: 'Next s4', destination: 's4'}
 
             ]
 
@@ -46,35 +46,35 @@ JOURNEY.data = {
     },
 
     s4: {
-        title: 'Turkey',
+        title: 'Turkey s4',
         contentFile: 'turkey',
         coverImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/12/18/1387371689516/Syrian-children-refugees--001.jpg',
         choice: {
             text: 'You have new choices to make. You can stay in Turkey and hope that for resettlement through the UNHCR resettlement programme, which moves refugees directly into European countries with full support to build a new life. Or you can take a dangerous route overland into the EU and apply for asylum once there. To do this you would probably have to cross the border into Greece illegally.',
             options: [
-                { text: 'Stay here', destination: 's5'},
-                { text: 'Try for Europe', destination: 's6' }
+                { text: 'Stay here s5', destination: 's5'},
+                { text: 'Try for Europe s6', destination: 's6' }
             ]
         }
     },
 
 
     s5: {
-        title: 'Resettlement',
-        contentFile: 'Resettlement',
+        title: 'Resettlement s5',
+        contentFile: 'resettlement',
         coverImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/12/18/1387371794897/People-walk-inside-Contai-001.jpg',
         asset: 'start',
         choice: {
-            text: '1 – You decide to stay in Turkey, it’s not perfect but it’s safe and a better option than living under mortar attack in Syria or taking a dangerous journey overland into Europe. (GO TO s 5)2 – You decide you will take the overland route through Greece, the nearest country and the most common illegal entry point into the EU. (GO TO s 6)',
+            text: 'What now? Stay in Turkey? Or try to get into Greece?',
             options: [
-                { text: 'Stay', destination: 's51'},
-                { text: 'Go to Greece', destination: 's6' }
+                { text: 'Stay s51', destination: 's51'},
+                { text: 'Greece s6', destination: 's6' }
             ]
         }
     },
 
     s51: {
-        title: 'Staying in Turkey',
+        title: 'Staying in Turkey s51',
         coverImg: 'http://static.guim.co.uk/sys-images/guardian/Pix/pictures/2014/1/7/1389113268437/Syrians-in-a-refugee-camp-001.jpg',
         contentFile: 'stay_in_turkey',
         asset: 'start',
@@ -83,15 +83,15 @@ JOURNEY.data = {
     },
 
     s6: {
-        title: 'The Greek border',
-        contentFile: 'greek_boarder',
+        title: 'The Greek border s6',
+        contentFile: 'greek_border',
         coverImg: 'http://static.guim.co.uk/sys-images/guardian/Pix/pictures/2014/1/7/1389114189060/A-Greek-soldier-on-a-mili-001.jpg',
         asset: 'start',
         choice: {
             text: 'You can try and get into Greece again. Alternatively, other Syrians in Istanbul tell you that there is another way into the EU, through Bulgaria.',
             options: [
-                { text: 'Try again', destination: 's7'},
-                { text: 'Bulgaria', destination: 's9' }
+                { text: 'Try again s7', destination: 's7'},
+                { text: 'Bulgaria s9', destination: 's9' }
             ]
         }
     },
