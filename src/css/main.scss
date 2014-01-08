@@ -29,7 +29,12 @@ figure {
         }
     }
 
-    
+    .end .scene-inner {
+        background-color: #333;
+        color: #EEE;
+    }
+
+
 
     .insert-image {
         float: right;
@@ -76,7 +81,7 @@ figure {
         font-size:16px;
         font-family:Arial, sans-serif;
         line-height:1.5em;
-        color:#565656; 
+        color:#565656;
     }
     .button-container{
         width:90%;
@@ -92,7 +97,7 @@ figure {
         color: rgba(51,51,51,0.6);
         cursor: pointer;
         font-size: 16px;
-        padding: 8px 20px; 
+        padding: 8px 20px;
 
         &.disabled {
             color: #d5d5d5;
@@ -145,7 +150,7 @@ figure {
 
 @media (min-width: 480px) {
     .game_wrapper {
-    
+
 
         .scene {
             padding: 48% 40px 0 40px;
