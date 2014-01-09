@@ -10,6 +10,45 @@ figure {
     line-height: 16px;
     position: relative;
 
+    .share_block{
+        border-top:1px dotted #fff;
+        border-bottom:1px dotted #fff;
+        padding: 30px 0;
+
+        p{
+            text-align:center;
+            font-size:16px;
+            width:60%;
+            margin: 0 auto;
+            line-height:1.5em;
+            margin-bottom:10px;
+        }
+
+        .share_links{
+            text-align:center;
+        }
+
+        button{
+            border:none;
+            background:none;
+
+            &:hover{
+                background:none;
+                border:none;
+            }
+        }
+    }
+
+    a{
+        color:#aaa;
+        text-decoration: none;
+    }
+
+    a:hover{
+        color:#444;
+        text-decoration: none;
+    }
+
     .scene_container {
         position: relative;;
         video {
@@ -29,9 +68,28 @@ figure {
         }
     }
 
-    .end .scene-inner {
-        background-color: #333;
-        color: #EEE;
+    .end{
+        a{
+            color:#c7c7c7;
+        }
+        .scene-inner {
+            background-color: #696969;
+            color: #fff;
+        }
+
+        .scene-copy{
+            p{
+                color:#fff;
+            }
+        }
+
+        .choices{
+            border:none;
+        }
+
+        .choice-text{
+            color:#fff;
+        }
     }
 
 
@@ -91,8 +149,8 @@ figure {
 
     .choice-btn {
         font-family: Arial, sans-serif;
-        border: 1px solid #CDCBC3;
-        background-color: #F1F1E8;
+        border: 1px solid #8F8C7F;
+        background-color: #CCCCB2;
         border-radius:3px;
         color: rgba(51,51,51,0.6);
         cursor: pointer;
@@ -110,12 +168,22 @@ figure {
                 background-color: #b2b195;
             }
         }
+
+        &.restart{
+            background-color:#fff;
+            border:none;
+            margin:0 auto;
+        }
+    }
+    .restart-btn-container{
+        text-align:center;
     }
 
     button:hover {
         background: #b2b195;
-        border-color:#b2b195;
+        border-color:#8F8C7F;
     }
+
 
     .outcomes {
         background: #222;
