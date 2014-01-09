@@ -92,6 +92,10 @@ figure.interactive {
         padding: 42% 10px 0 10px;
         font-family: "EgyptianText", Georgia, serif;
 
+        p {
+            font-family: "EgyptianText", Georgia, serif;
+        }
+
         &.disabled {
             opacity:0.5;
         }
