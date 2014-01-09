@@ -63,6 +63,7 @@ JOURNEY.Game = function(el) {
             sceneContent: JOURNEY.content[scene.contentFile],
             choiceText: (scene.choice) ? scene.choice.text : '',
             buttons: (scene.choice) ? scene.choice.options : '',
+            coverCredit: (scene.coverCredit) ? scene.coverCredit : '',
             insertImg: scene.insertImg
         });
 
