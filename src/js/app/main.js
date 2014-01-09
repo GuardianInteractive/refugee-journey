@@ -16,7 +16,7 @@ JOURNEY.Game = function(el) {
 
     function setupDOM() {
         container.innerHTML = JOURNEY.html.base_layout;
-        sceneContainerEl = $('.scene_container', container);
+        sceneContainerEl = jQuery('.scene_container', container);
 
         // Bind events
         sceneContainerEl.on('click', '.restart', newGame);
@@ -56,7 +56,7 @@ JOURNEY.Game = function(el) {
             return;
         }
 
-        $('.choice-btn', sceneContainerEl).off().attr('disabled', true).addClass('disabled');
+        jQuery('.choice-btn', sceneContainerEl).off().attr('disabled', true).addClass('disabled');
 
         var sceneHTML = Mustache.render(JOURNEY.html.view_scene, {
             title: (scene.title) ? scene.title : '',
@@ -67,7 +67,7 @@ JOURNEY.Game = function(el) {
             insertImg: scene.insertImg
         });
 
-        var sceneEl = $(sceneHTML);
+        var sceneEl = jQuery(sceneHTML);
 
         cacheNextImages(scene);
 
@@ -77,14 +77,14 @@ JOURNEY.Game = function(el) {
         sceneContainerEl.append(sceneEl);
 
         // Animate new scene into view
-        $('html, body').stop();
-        $('html, body').animate({
+        jQuery('html, body').stop();
+        jQuery('html, body').animate({
             scrollTop: sceneEl.offset().top
         }, 800);
 
         if (scene.end === true) {
             player.success = scene.success;
-            $('.scene-inner', sceneEl).append($(JOURNEY.content.share_and_replay));
+            jQuery('.scene-inner', sceneEl).append(jQuery(JOURNEY.content.share_and_replay));
             sceneEl.addClass('end');
         }
 
@@ -107,7 +107,7 @@ JOURNEY.Game = function(el) {
     }
 
     function clickedChoice(elm) {
-        currentScene = $(elm).data('destination');
+        currentScene = jQuery(elm).data('destination');
         render();
     }
 
