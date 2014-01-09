@@ -8,7 +8,7 @@ JOURNEY.data = {
         choice: {
             text: 'Do you decide to try and reach Europe by any means necessary? Or do you decide it would be safer to travel overland to the nearest country, Turkey, and seek refuge there?',
             options: [
-                {text: 'Europe s2', destination: 's2'},
+                {text: 'Europe s6', destination: 's6'},
                 {text: 'Turkey s4', destination: 's4'}
 
             ]
@@ -105,7 +105,20 @@ JOURNEY.data = {
             text: 'You know that the borders to leave Greece are watched to stop irregular migrants leaving as well as entering, so you could claim asylum here rather than put your children through more difficult travelling.	Or you could keep going to Sweden, which means avoiding detection by Greek border guards. Migrants without refugee status in Greece are frequently rounded up and detained.',
             options: [
                 { text: 'Stay in Greece', destination: 's8'},
-                { text: 'Head for Sweden', destination: 'gotoTurkey' }
+                { text: 'Head for Sweden', destination: 's71' }
+            ]
+        }
+    },
+
+    s71: {
+        title: 'Overland across Europe',
+        contentFile: 'acrosseurope',
+        coverImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/12/18/1387383221567/Immigrants-walk-on-the-hi-001.jpg',
+        asset: 'start',
+        choice: {
+            text: 'At last your bus pulls into the bus station in Stockholm.',
+            options: [
+                { text: 'Next', destination: 's11' }
             ]
         }
     },
