@@ -112,7 +112,7 @@ figure {
 
     .scene-inner {
         background: #f8f7f5;
-        padding: 30px;
+        padding: 15px;
         overflow: hidden;
     }
 
@@ -218,7 +218,9 @@ figure {
 
 @media (min-width: 480px) {
     .game_wrapper {
-
+        .scene-inner {
+            padding: 30px;
+        }   
 
         .scene {
             padding: 48% 40px 0 40px;
