@@ -50,7 +50,7 @@ JOURNEY.data = {
         contentFile: 'turkey',
         coverImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/12/18/1387371689516/Syrian-children-refugees--001.jpg',
         choice: {
-            text: 'You have new choices to make. You can stay in Turkey and hope that for resettlement through the UNHCR resettlement programme, which moves refugees directly into European countries with full support to build a new life. Or you can take a dangerous route overland into the EU and apply for asylum once there. To do this you would probably have to cross the border into Greece illegally.',
+            text: 'You have new choices to make. You can stay in Turkey and hope for resettlement through the UNHCR resettlement programme, which moves refugees directly into European countries with full support to build a new life. Or you can take a dangerous route overland into the EU and apply for asylum once there.',
             options: [
                 { text: 'Stay here s5', destination: 's5'},
                 { text: 'Try for Europe s6', destination: 's6' }
@@ -65,7 +65,7 @@ JOURNEY.data = {
         coverImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/12/18/1387371794897/People-walk-inside-Contai-001.jpg',
         asset: 'start',
         choice: {
-            text: 'What now? Stay in Turkey? Or try to get into Greece?',
+            text: 'You can decide to stay in Turkey, where, although conditions are not perfect, you are safe. Or you can take the overland route through Greece, the nearest country and the most common illegal entry point into the EU.',
             options: [
                 { text: 'Stay s51', destination: 's51'},
                 { text: 'Greece s6', destination: 's6' }
@@ -88,7 +88,7 @@ JOURNEY.data = {
         coverImg: 'http://static.guim.co.uk/sys-images/guardian/Pix/pictures/2014/1/7/1389114189060/A-Greek-soldier-on-a-mili-001.jpg',
         asset: 'start',
         choice: {
-            text: 'You can try and get into Greece again. Alternatively, other Syrians in Istanbul tell you that there is another way into the EU, through Bulgaria.',
+            text: 'You can try to get into Greece again. Alternatively, other Syrians in Istanbul tell you that there is another way into the EU, through Bulgaria.',
             options: [
                 { text: 'Try again s7', destination: 's7'},
                 { text: 'Bulgaria s9', destination: 's9' }
@@ -102,7 +102,7 @@ JOURNEY.data = {
         coverImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/12/18/1387383221567/Immigrants-walk-on-the-hi-001.jpg',
         asset: 'start',
         choice: {
-            text: 'You know that the borders to leave Greece are watched to stop irregular migrants leaving as well as entering, so you could claim asylum here rather than put your children through more difficult travelling.	Or you could keep going to Sweden, which means avoiding detection by Greek border guards. Migrants without refugee status in Greece are frequently rounded up and detained.',
+            text: 'You could claim asylum here rather than put your children through another difficult journey.	Or you could keep going to Sweden, which means avoiding detection by Greek border guards. Migrants without refugee status in Greece are frequently rounded up and detained.',
             options: [
                 { text: 'Stay in Greece', destination: 's8'},
                 { text: 'Head for Sweden', destination: 's71' }
@@ -129,11 +129,11 @@ JOURNEY.data = {
         coverImg: 'http://static.guim.co.uk/sys-images/guardian/Pix/pictures/2014/1/7/1389114506126/A-Syrian-refugee-family-i-001.jpg',
         asset: 'start',
         choice: {
-            text: '1 Return to Turkey and try to reach Europe via Bulgaria instead (s 11) 2 Try to make a life in Athens, blending into the underground Syrian community there. (s 10) 3 Use your savings to look for fake passports that would get you onto a plane to Stockholm. (s 12)4 You decide to keep moving forward and try to reach Sweden overland,  You don’t want to risk using a false passport so you work out the overland journey, through eastern Europe, Romania and Germany and into Sweden. (s 13)',
+            text: 'Which of the routes do you choose: Europe via Bulgaria, the airport or the Balkans, or Athens, to start a new life in Greece?',
             options: [
-                { text: 'Back to Turkey', destination: 's11'},
-                { text: 'Fake passport', destination: 's12'},
-                { text: 'Overland to Sweden', destination: 's13'},
+                { text: 'Bulgaria', destination: 's11'},
+                { text: 'Airport', destination: 's12'},
+                { text: 'Balkans', destination: 's71'},
                 { text: 'Life in Athens', destination: 's10' }
             ]
         }
