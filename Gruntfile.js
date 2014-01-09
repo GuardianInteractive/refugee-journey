@@ -77,7 +77,7 @@ module.exports = function(grunt) {
                 patterns: [
                     {
                         match: 'path',
-                        replacement: (isDev) ? '/<%= pkg.version %>' : '<%= pkg.remotePath %><%= pkg.version %>',
+                        replacement: (isDev) ? 'http://localhost:9999/<%= pkg.version %>' : '<%= pkg.remotePath %><%= pkg.version %>',
                         expression: false   // simple variable lookup
                     },
                     {
@@ -87,7 +87,7 @@ module.exports = function(grunt) {
                     },
                     {
                         match: 'root',
-                        replacement: (isDev) ? '/' : '<%= pkg.remotePath %>',
+                        replacement: (isDev) ? 'http://localhost:9999/' : '<%= pkg.remotePath %>',
                         expression: false   // simple variable lookup
                     }
                 ]
