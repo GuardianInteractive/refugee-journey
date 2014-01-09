@@ -52,8 +52,8 @@ JOURNEY.data = {
         choice: {
             text: 'You have new choices to make. You can stay in Turkey and hope for resettlement through the UNHCR resettlement programme, which moves refugees directly into European countries with full support to build a new life. Or you can take a dangerous route overland into the EU and apply for asylum once there.',
             options: [
-                { text: 'Stay here s5', destination: 's5'},
-                { text: 'Try for Europe s6', destination: 's6' }
+                { text: 'Apply for resettlement s5', destination: 's5'},
+                { text: 'Push on alone s6', destination: 's6' }
             ]
         }
     },
@@ -102,10 +102,10 @@ JOURNEY.data = {
         coverImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/12/18/1387383221567/Immigrants-walk-on-the-hi-001.jpg',
         asset: 'start',
         choice: {
-            text: 'You could claim asylum here rather than put your children through another difficult journey.	Or you could keep going to Sweden, which means avoiding detection by Greek border guards. Migrants without refugee status in Greece are frequently rounded up and detained.',
+            text: 'You could claim asylum here rather than put your children through another difficult journey.	Or you could try to continue your journey to Sweden. Other refugees have told you that the easiest route is to travel through Italy.',
             options: [
                 { text: 'Stay in Greece', destination: 's8'},
-                { text: 'Head for Sweden', destination: 's71' }
+                { text: 'Go to Italy', destination: 's13' }
             ]
         }
     },
@@ -129,11 +129,11 @@ JOURNEY.data = {
         coverImg: 'http://static.guim.co.uk/sys-images/guardian/Pix/pictures/2014/1/7/1389114506126/A-Syrian-refugee-family-i-001.jpg',
         asset: 'start',
         choice: {
-            text: 'Which of the routes do you choose: Europe via Bulgaria, the airport or the Balkans, or Athens, to start a new life in Greece?',
+            text: 'Which of the routes do you choose: Europe via Bulgaria, the airport or by ferry to Italy, or stay in Athens, to start a new life in Greece?',
             options: [
                 { text: 'Bulgaria', destination: 's11'},
                 { text: 'Airport', destination: 's12'},
-                { text: 'Balkans', destination: 's71'},
+                { text: 'Ferry to Italy', destination: 's13'},
                 { text: 'Life in Athens', destination: 's10' }
             ]
         }
@@ -146,7 +146,7 @@ JOURNEY.data = {
         choice: {
             text: 'You have two options1 Stay in Turkey (Go to s 5)2 Use the last of your savings to try to get into Bulgaria again. (Go to s 11)',
             options: [
-                { text: 'Stay in Turkey', destination: 's5'},
+                { text: 'Stay in Turkey', destination: 's51'},
                 { text: 'Try Bulgaria again', destination: 's111' }
             ]
         }
@@ -169,14 +169,14 @@ JOURNEY.data = {
     },
 
     s13: {
-        title: 'Through Italy to Sweden',
+        title: 'Back in Patras',
         contentFile: 'italy_to_sweden',
         coverImg: '2013/12/18/1387383381267/A-migrant-sits-on-rocks-a-001.jpg',
         choice: {
             text: '?',
             options: [
                 { text: 'Try again', destination: 's14'},
-                { text: 'Stay in Athens', destination: 's10' }
+                { text: 'Go back to Athens', destination: 's10' }
             ]
         }
     },
