@@ -23,7 +23,7 @@ JOURNEY.data = {
         coverImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/12/18/1387371493923/Syrian-civilians-leave-wi-001.jpg',
         coverCredit : 'PHOTO CREDIT',
         choice: {
-            text: 'So how do you get there? Obviously the safest and easiest way is to travel by plane.Or you could travel overland to Istanbul, from where you hear it is possible to make your way across the border into Europe. Lastly, you could go to a refugee camp in Turkey. Several thousand of the most vulnerable Syrian refugees are being airlifted from such camps directly into northern European countries.',
+            text: 'How do you want to try to get to Europe?',
             options: [
                 {text: 'By air', destination: 's21'},
                 {text: 'To Istanbul', destination: 's6'},
@@ -140,7 +140,7 @@ JOURNEY.data = {
         coverCredit : 'PHOTO CREDIT',
         asset: 'start',
         choice: {
-            text: 'Which of the routes do you choose: Europe via Bulgaria, the airport or by ferry to Italy, or stay in Athens, to start a new life in Greece?',
+            text: 'Which of the routes do you choose: Europe via Bulgaria, via the airport, or by ferry to Italy; or stay in Athens, to start a new life in Greece?',
             options: [
                 { text: 'Bulgaria', destination: 's11'},
                 { text: 'Airport', destination: 's12'},
@@ -156,7 +156,7 @@ JOURNEY.data = {
         coverImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/12/18/1387371867715/A-Bulgarian-army-officer--001.jpg',
         coverCredit : 'PHOTO CREDIT',
         choice: {
-            text: 'You have two options1 Stay in Turkey (Go to s 5)2 Use the last of your savings to try to get into Bulgaria again. (Go to s 11)',
+            text: 'Do you want to stay in Turkey, or use the last of your savings in another attempt to get into Bulgaria?',
             options: [
                 { text: 'Stay in Turkey', destination: 's51'},
                 { text: 'Try Bulgaria again', destination: 's111' }
@@ -188,7 +188,7 @@ JOURNEY.data = {
         coverImg: '2013/12/18/1387383381267/A-migrant-sits-on-rocks-a-001.jpg',
         coverCredit : 'PHOTO CREDIT',
         choice: {
-            text: '?',
+            text: 'Do you want to try your luck again across the Adriatic, or return to Athens?',
             options: [
                 { text: 'Try again', destination: 's14'},
                 { text: 'Go back to Athens', destination: 's10' }
@@ -213,6 +213,7 @@ JOURNEY.data = {
     s12: {
         title: 'Arriving in Sweden by plane',
         contentFile: 'sweden_by_plane',
+        coverImg: 'http://static.guim.co.uk/sys-images/guardian/Pix/pictures/2014/1/9/1389264413847/Arlanda-Airport-Stockholm-001.jpg',
         asset: 'start',
         choice: {
             text: 'Next',
@@ -224,6 +225,7 @@ JOURNEY.data = {
 
     s15: {
         title: 'Refugee life in Italy',
+        coverImg: 'http://static.guim.co.uk/sys-images/guardian/Pix/pictures/2014/1/9/1389264537053/Italian-police-take-pictu-001.jpg',
         contentFile: 'refugee_life_in_italy',
         success: false,
         end: true
