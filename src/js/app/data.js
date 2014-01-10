@@ -126,21 +126,6 @@ JOURNEY.data = {
         }
     },
 
-    s71: {
-        title: 'Overland across Europe',
-        contentFile: 'acrosseurope',
-        coverImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/12/18/1387383221567/Immigrants-walk-on-the-hi-001.jpg',
-        coverCredit : 'Photo: Aris Messinis/AFP/Getty Images ',
-        insertImg:
-        asset: 'start',
-        choice: {
-            text: 'At last your bus pulls into the bus station in Stockholm.',
-            options: [
-                { text: 'Next', destination: 's11' }
-            ]
-        }
-    },
-
     s8: {
         title: 'The Greek asylum system',
         contentFile: 'greek_asylum_system',
