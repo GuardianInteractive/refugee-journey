@@ -83,7 +83,7 @@ figure {
         background-image: url(http://placehold.it/940x530);
         background-repeat: no-repeat;
         background-size: contain;
-        padding: 42% 10px 0 10px;
+        padding: 31% 10px 0 10px;
         font-family: Georgia, serif;
 
         &.disabled {
@@ -175,9 +175,9 @@ figure {
         border: 1px solid #8F8C7F;
         background-color: #CCCCB2;
         border-radius:3px;
-        color: rgba(51,51,51,0.6);
+        color: #565656;
         cursor: pointer;
-        font-size: 16px;
+        font-size: 14px;
         padding: 8px 20px;
 
         &.disabled {
@@ -195,7 +195,10 @@ figure {
         &.restart{
             background-color:#fff;
             border:none;
-            margin:0 auto;
+            margin:20px auto 0;
+            font-weight:bold;
+            color:#333;
+            padding:12px 60px;
         }
     }
     .restart-btn-container{
@@ -239,6 +242,14 @@ figure {
     }
 }
 
+@media (min-width: 350px) {
+    .game_wrapper {
+        .scene {
+            padding: 39% 10px 0 10px;
+        }
+    }
+}
+
 @media (min-width: 480px) {
     .game_wrapper {
         .scene-inner {
@@ -246,7 +257,7 @@ figure {
         }   
 
         .scene {
-            padding: 48% 40px 0 40px;
+            padding: 44% 40px 0 40px;
             font-family: Georgia, serif;
 
             &.disabled {
