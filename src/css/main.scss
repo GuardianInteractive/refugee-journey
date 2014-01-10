@@ -7,21 +7,25 @@ figure.interactive {
     margin: auto;
 }
 
+
+
 .game_wrapper {
     color: #565656;
     font-size: 14px;
     line-height: 16px;
     position: relative;
+    -webkit-font-smoothing: antialiased;
 
     .share_block{
         border-top:1px dotted #fff;
         border-bottom:1px dotted #fff;
         padding: 30px 0;
+        margin:50px 0;
 
         p{
             text-align:center;
             font-size:16px;
-            width:60%;
+            width:80%;
             margin: 0 auto;
             line-height:1.5em;
             margin-bottom:10px;
@@ -43,9 +47,9 @@ figure.interactive {
     }
 
     h2 {
-        margin: 1em 0;
+        margin: 1.5em 0 1em;
         font-family: "EgyptianHeadline", georgia, serif;
-        font-size: 21px;
+        font-size: 18px;
     }
 
     a{
@@ -67,6 +71,7 @@ figure.interactive {
             position: relative;
             padding-bottom: 56.25%;
             height: 0;
+            margin-bottom:10px;
         }
 
         video {
@@ -121,6 +126,8 @@ figure.interactive {
 
         .choices{
             border:none;
+            margin-top:0px;
+            padding-top:0;
         }
 
         .choice-text{
@@ -131,20 +138,30 @@ figure.interactive {
 
 
     .insert-image {
-        float: right;
-        margin: 0 0 5px 5px;
-        max-width: 150px;
+        margin: 0 auto;
+        width:100%;
+        max-width: 300px;
     }
 
     .scene-title {
         background: rgba(0, 0, 0, 0.4);
-        color: rgb(255,255,255);
+        overflow:hidden;
         padding: 10px;
         margin: 0;
-        font-size: 26px;
-        font-weight: normal;
-        font-family: "EgyptianHeadline", georgia, serif;
-        line-height: normal;
+        
+
+        h2{
+            color: rgb(255,255,255);
+            margin:0;
+            font-size: 14px;
+            font-weight: normal;
+            font-family: "AgateSans", arial, sans-serif;
+            line-height: normal;
+            float:left;
+        }
+        p{
+            float:right;
+        }
     }
 
     .scene-inner {
@@ -162,17 +179,18 @@ figure.interactive {
         color:#565656;
         font-size:16px;
         line-height:1.5em;
+        margin: 1.5em 0;
     }
 
     .choices {
         border-top: 1px dotted #999999;
-        padding-top: 10px;
+        padding-top: 25px;
         font-size: 16px;
         font-weight: bold;
-        margin-top: 20px;
+        margin-top: 30px;
     }
 
-    .choice-text {
+    p.choice-text {
         font-size:16px;
         font-family: "AgateSans", Arial, sans-serif;
         line-height:1.5em;
@@ -180,19 +198,20 @@ figure.interactive {
     }
     .button-container{
         width:90%;
-        margin:30px auto 0;
+        margin:30px auto 20px;
         text-align:center;
     }
 
     .choice-btn {
         font-family: "AgateSans", Arial, sans-serif;
-        border: 1px solid #8F8C7F;
-        background-color: #CCCCB2;
+        border: 1px solid #c1c1c1;
+        background-color: #E3E3D9;
         border-radius:3px;
         color: #565656;
         cursor: pointer;
         font-size: 14px;
-        padding: 8px 20px;
+        padding: 10px 40px;
+        margin: 0 10px 15px;
 
         &.disabled {
             color: #d5d5d5;
@@ -268,6 +287,11 @@ figure.interactive {
     .game_wrapper {
         .scene-inner {
             padding: 30px;
+        }
+        .insert-image {
+            float: right;
+            max-width:200px;
+            margin: 0 0 5px 5px;
         }
 
         .scene {
