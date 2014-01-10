@@ -99,6 +99,20 @@ module.exports = function(grunt) {
                     src: ['src/js/boot.js', 'src/*.html'],
                     dest: 'dist/'
                 }]
+            },
+            fonts: {
+                options: {
+                  patterns: [
+                    {
+                      match: /http:\/\/pasteup.guim.co.uk\/fonts/g,
+                      replacement: (isDev) ? 'http://s3.amazonaws.com/gdn-pub/fonts' : 'http://pasteup.guim.co.uk/fonts'
+                    }
+                  ]
+                },
+                files: [{
+                    src: ['dist/<%= pkg.version %>/css/main.css'],
+                    dest: 'dist/<%= pkg.version %>/css/main.css'
+                }]
             }
         },
 
@@ -170,7 +184,7 @@ module.exports = function(grunt) {
 
     // Tasks
     grunt.registerTask('js', ['jshint', 'concat', 'uglify', 'usemin']);
-    grunt.registerTask('build', ['clean', 'sass', 'copy', 'mustache', 'replace', 'useminPrepare', 'js']);
+    grunt.registerTask('build', ['clean', 'sass', 'copy', 'mustache', 'replace:code', 'useminPrepare', 'js', 'replace:fonts']);
     grunt.registerTask('default', ['build', 'connect', 'watch']);
     grunt.registerTask('deploy', ['build', 'aws_s3']);
 };
