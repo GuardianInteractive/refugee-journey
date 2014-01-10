@@ -22,7 +22,7 @@ JOURNEY.data = {
         contentFile: 'asylum_1',
         coverImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/12/18/1387371493923/Syrian-civilians-leave-wi-001.jpg',
         coverCredit : 'Photo: Marco Longari/AFP/Getty Images',
-        insertImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/1/10/1389354448960/aleppo_(1).png'
+        insertImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/1/10/1389354448960/aleppo_(1).png',
         choice: {
             text: 'How do you want to try to get to Europe?',
             options: [
@@ -40,7 +40,7 @@ JOURNEY.data = {
         contentFile: 'asylum_2',
         coverImg: 'http://static.guim.co.uk/sys-images/guardian/Pix/pictures/2014/1/7/1389111546993/Syrian-refugees-travel-by-001.jpg',
         coverCredit : 'Photo: Muhammed Muheisen/AP',
-        insertImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/1/10/1389354448960/aleppo_(1).png'
+        insertImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/1/10/1389354448960/aleppo_(1).png',
         choice: {
             text: 'You have only one choice now. You have to travel overland if you want to leave Syria.',
             options: [
@@ -56,7 +56,7 @@ JOURNEY.data = {
         contentFile: 'turkey',
         coverImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/12/18/1387371689516/Syrian-children-refugees--001.jpg',
         coverCredit : 'Photo: Adem Altan/AFP/Getty Images',
-        insertImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/1/10/1389354448960/aleppo_(1).png'
+        insertImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/1/10/1389354448960/aleppo_(1).png',
         choice: {
             text: 'You have new choices to make. You can stay in Turkey and hope for resettlement through the UNHCR resettlement programme, which moves refugees directly into European countries with full support to build a new life. Or you can take a dangerous route overland into the EU and apply for asylum once there.',
             options: [
@@ -72,7 +72,7 @@ JOURNEY.data = {
         contentFile: 'resettlement',
         coverImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/12/18/1387371794897/People-walk-inside-Contai-001.jpg',
         coverCredit : 'Photo: Christian Marquardt/Getty Images',
-        insertImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/1/10/1389354448960/aleppo_(1).png'
+        insertImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/1/10/1389354448960/aleppo_(1).png',
         asset: 'start',
         choice: {
             text: 'You can decide to stay in Turkey, where, although conditions are not perfect, you are safe. Or you can take the overland route through Greece, the nearest country and the most common illegal entry point into the EU.',
@@ -87,7 +87,7 @@ JOURNEY.data = {
         title: 'Staying in Turkey s51',
         coverImg: 'http://static.guim.co.uk/sys-images/guardian/Pix/pictures/2014/1/7/1389113268437/Syrians-in-a-refugee-camp-001.jpg',
         coverCredit : 'Photo: Christian Marquardt/Getty Images ',
-        insertImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/1/10/1389354448960/aleppo_(1).png'
+        insertImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/1/10/1389354448960/aleppo_(1).png',
         contentFile: 'stay_in_turkey',
         asset: 'start',
         success:false,
@@ -99,7 +99,7 @@ JOURNEY.data = {
         contentFile: 'greek_border',
         coverImg: 'http://static.guim.co.uk/sys-images/guardian/Pix/pictures/2014/1/7/1389114189060/A-Greek-soldier-on-a-mili-001.jpg',
         coverCredit : 'Photo: Nikolas Giakoumidis/AP',
-        insertImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/1/10/1389354374162/istanbul.png'
+        insertImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/1/10/1389354374162/istanbul.png',
         asset: 'start',
         choice: {
             text: 'You can try to get into Greece again. Alternatively, other Syrians in Istanbul tell you that there is another way into the EU, through Bulgaria.',
@@ -115,7 +115,7 @@ JOURNEY.data = {
         contentFile: 'into_greece',
         coverImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/12/18/1387383221567/Immigrants-walk-on-the-hi-001.jpg',
         coverCredit : 'Photo: Aris Messinis/AFP/Getty Images',
-        insertImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/1/10/1389354414701/athens.png'
+        insertImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/1/10/1389354414701/athens.png',
         asset: 'start',
         choice: {
             text: 'You could claim asylum here rather than put your children through another difficult journey.	Or you could try to continue your journey to Sweden. Other refugees have told you that the easiest route is to travel through Italy.',
@@ -146,7 +146,7 @@ JOURNEY.data = {
         contentFile: 'greek_asylum_system',
         coverImg: 'http://static.guim.co.uk/sys-images/guardian/Pix/pictures/2014/1/7/1389114506126/A-Syrian-refugee-family-i-001.jpg',
         coverCredit : 'Photo: John Kolesidis/Reuters',
-        insertImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/1/10/1389354414701/athens.png'
+        insertImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/1/10/1389354414701/athens.png',
         asset: 'start',
         choice: {
             text: 'Which of the routes do you choose: Europe via Bulgaria, via the airport, or by ferry to Italy; or stay in Athens, to start a new life in Greece?',
@@ -164,7 +164,7 @@ JOURNEY.data = {
         contentFile: 'bulgaria',
         coverImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/12/18/1387371867715/A-Bulgarian-army-officer--001.jpg',
         coverCredit : 'Photo: Nikolay Doychinov/AFP/Getty Images',
-        insertImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/1/10/1389354374162/istanbul.png'
+        insertImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/1/10/1389354374162/istanbul.png',
         choice: {
             text: 'Do you want to stay in Turkey, or use the last of your savings in another attempt to get into Bulgaria?',
             options: [
@@ -179,7 +179,7 @@ JOURNEY.data = {
         contentFile: 'bulgaria_again',
         coverImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/12/18/1387370997705/Bulgarian-border-2-001.jpg',
         coverCredit : 'Photo: Oleg Popov/Reuters',
-        insertImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/1/10/1389354374162/istanbul.png'
+        insertImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/1/10/1389354374162/istanbul.png',
         success: false,
         end: true
     },
@@ -189,7 +189,7 @@ JOURNEY.data = {
         contentFile: 'life_in_athens',
         coverImg: 'http://static.guim.co.uk/sys-images/guardian/Pix/pictures/2014/1/7/1389115324731/A-guard-watches-over-ille-001.jpg',
         coverCredit : 'Photo: Reuters',
-        insertImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/1/10/1389354414701/athens.png'
+        insertImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/1/10/1389354414701/athens.png',
         success: false,
         end: true
     },
@@ -199,7 +199,7 @@ JOURNEY.data = {
         contentFile: 'italy_to_sweden',
         coverImg: 'http://image.guardian.co.uk/sys-images/Guardian/Pix/pictures/2013/12/18/1387383381267/A-migrant-sits-on-rocks-a-001-thumb.jpg',
         coverCredit : 'Photo: Filippo Monteforte/AFP/Getty Images',
-        insertImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/1/10/1389354496425/patras.png'
+        insertImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/1/10/1389354496425/patras.png',
         choice: {
             text: 'Do you want to try your luck again across the Adriatic, or return to Athens?',
             options: [
@@ -214,7 +214,7 @@ JOURNEY.data = {
         contentFile: 'sweden_via_italy',
         coverImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/12/18/1387371321532/Syrian-civilians-flee-the-001.jpg',
         coverCredit : 'Photo: Dimitar Dilkoff/AFP/Getty Images',
-        insertImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/1/10/1389354496425/patras.png'
+        insertImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/1/10/1389354496425/patras.png',
         asset: 'start',
         choice: {
             text: '1. Claim asylum in Italy (Go to s 15) 2. You are in the Schengen zone now so you think it’s worth just travelling forward to Sweden overland, avoiding the Italian authorities. (Go to s 16)?',
@@ -230,7 +230,7 @@ JOURNEY.data = {
         contentFile: 'sweden_by_plane',
         coverImg: 'http://static.guim.co.uk/sys-images/guardian/Pix/pictures/2014/1/9/1389264413847/Arlanda-Airport-Stockholm-001.jpg',
         coverCredit : 'Photo: Tariq Dajani/Getty Images',
-        insertImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/1/10/1389354320559/stockholm.png'
+        insertImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/1/10/1389354320559/stockholm.png',
         asset: 'start',
         choice: {
             text: 'Next',
@@ -244,7 +244,7 @@ JOURNEY.data = {
         title: 'Refugee life in Italy',
         coverImg: 'http://static.guim.co.uk/sys-images/guardian/Pix/pictures/2014/1/9/1389264537053/Italian-police-take-pictu-001.jpg',
         coverCredit : 'Photo: Antonio Parrinello /Reuters',
-        insertImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/1/10/1389354496425/patras.png'
+        insertImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/1/10/1389354496425/patras.png',
         contentFile: 'refugee_life_in_italy',
         success: false,
         end: true
@@ -255,7 +255,7 @@ JOURNEY.data = {
         contentFile: 'overland_to_sweden',
         coverImg: 'http://static.guim.co.uk/sys-images/guardian/Pix/pictures/2014/1/7/1389115450403/The-waterfront-in-Stockho-001.jpg',
         coverCredit : 'Photo: Getty Images ',
-        insertImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/1/10/1389354320559/stockholm.png'
+        insertImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/1/10/1389354320559/stockholm.png',
         asset: 'start',
         choice: {
             text: 'Next',
@@ -270,7 +270,7 @@ JOURNEY.data = {
         contentFile: 'refugee_life_in_sweden',
         coverImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/12/18/1387383485866/Residential-housing-block-001.jpg',
         coverCredit : 'Photo: Bloomberg via Getty Images ',
-        insertImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/1/10/1389354320559/stockholm.png'
+        insertImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/1/10/1389354320559/stockholm.png',
         success: true,
         end: true
     }
