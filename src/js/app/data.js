@@ -84,7 +84,7 @@ JOURNEY.data = {
     },
 
     s51: {
-        title: 'Staying in Turkey',
+        title: 'Staying in Turkey s51',
         coverImg: 'http://static.guim.co.uk/sys-images/guardian/Pix/pictures/2014/1/7/1389113268437/Syrians-in-a-refugee-camp-001.jpg',
         coverCredit : 'Photo: Christian Marquardt/Getty Images ',
         insertImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/1/13/1389608618658/AleppomapforFortressEurope.png',
@@ -137,7 +137,7 @@ JOURNEY.data = {
         choice: {
             text: 'Which of the routes do you choose: Europe via Bulgaria, via the airport, or by ferry to Italy; or stay in Athens, to start a new life in Greece?',
             options: [
-                { text: 'Bulgaria', destination: 's9'},
+                { text: 'Bulgaria', destination: 's11'},
                 { text: 'Airport', destination: 's12'},
                 { text: 'Ferry to Italy', destination: 's13'},
                 { text: 'Life in Athens', destination: 's10' }
@@ -203,7 +203,7 @@ JOURNEY.data = {
         insertImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/1/13/1389608619723/PatrasmapforFortressEurope.png',
         asset: 'start',
         choice: {
-            text: 'You could claim asylum in Italy. Or, since you are in the Schengen zone now you might think it worth heading on to Sweden overland, avoiding the Italian authorities.',
+            text: '1. Claim asylum in Italy (Go to s 15) 2. You are in the Schengen zone now so you think it’s worth just travelling forward to Sweden overland, avoiding the Italian authorities. (Go to s 16)?',
             options: [
                 { text: 'Claim asylum', destination: 's15'},
                 { text: 'Push on to Sweden', destination: 's16' }
