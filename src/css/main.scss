@@ -2,9 +2,8 @@
 @import '_fonts';
 
 figure.interactive {
-    margin: 0;
-    max-width: 800px;
-    margin: auto;
+    max-width: 940px;
+    margin: auto -10px;
 }
 
 
@@ -17,39 +16,40 @@ figure.interactive {
     -webkit-font-smoothing: antialiased;
 
     .scene{
-    .share_block{
-        border-top:1px dotted #fff;
-        border-bottom:1px dotted #fff;
-        padding: 30px 0 25px;
-        margin:50px 0;
+        .share_block{
+            border-top:1px dotted #fff;
+            border-bottom:1px dotted #fff;
+            padding: 30px 0 25px;
+            margin:50px 0 30px;
 
-        p{
-            text-align:center;
-            font-size:16px;
-            width:80%;
-            margin: 0 auto;
-            line-height:1.5em;
-            margin-bottom:10px;
-            font-family: "AgateSans", Arial, sans-serif;
+            p{
+                text-align:center;
+                font-size:16px;
+                width:80%;
+                margin-left:auto;
+                margin-right:auto;
+                line-height:1.5em;
+                margin-bottom:10px;
+                font-family: "AgateSans", Arial, sans-serif;
+            }
         }
 
         .share_links{
             text-align:center;
-            margin-top:20px;
-        }
 
-        button{
-            border:none;
-            background:none;
-            cursor:pointer;
-
-            &:hover{
-                background:none;
+            button{
                 border:none;
+                background:none;
+                cursor:pointer;
+
+                &:hover{
+                    background:none;
+                    border:none;
+                }
             }
         }
     }
-    }
+
 
     h2 {
         margin: 1.5em 0 1em !important;
@@ -246,6 +246,8 @@ figure.interactive {
     }
     .restart-btn-container{
         text-align:center;
+        margin-top:20px;
+        margin-bottom:0;
     }
 
     button:hover {
@@ -294,6 +296,10 @@ figure.interactive {
 }
 
 @media (min-width: 480px) {
+
+    figure.interactive{
+        margin:auto;
+    }
     .game_wrapper {
         .scene-inner {
             padding: 30px;
