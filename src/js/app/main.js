@@ -133,7 +133,7 @@ JOURNEY.Game = function(el) {
     }
 
     function getShareURL() {
-        var shareURL = 'http://example.com/share/example/';
+        var shareURL = 'http://gu.com/p/3yytd';
         // if (player.scenes.length > 0) {
         //     shareURL += '?journey=' + encodeURIComponent(player.scenes.join(','));
         // }
@@ -150,7 +150,7 @@ JOURNEY.Game = function(el) {
         window.open(
             targetUrl,
             'Share',
-            'width=640,height=500,resizable,scrollbars=yes,status=1'
+            'width=650,height=510,resizable,scrollbars=yes,status=1'
         );
     }
 
@@ -158,10 +158,10 @@ JOURNEY.Game = function(el) {
         event.preventDefault();
         var options = {
             related: 'guardian',
-            text: 'Refugee journey tweet text',
+            text: "Put yourself in the shoes of a refugee trying to enter 'Fortress Europe' - interactive",
             via: 'guardian',
             url: getShareURL(),
-            hashtags: 'TEST,HASH,TAGS'
+            hashtags: ''
         };
 
         openShareWindow('https://twitter.com/share?', options);
@@ -170,10 +170,10 @@ JOURNEY.Game = function(el) {
     function shareFacebook(event) {
         event.preventDefault();
         var options = {
-            'p[title]': 'PAGE TITLE',
-            'p[summary]': 'Refugee journey SUMMARY TEXT',
+            'p[title]': "Refugees and fortress Europe: Put yourself in their shoes - interactive",
+            'p[summary]': "Put yourself in the shoes of a refugee trying to enter 'Fortress Europe' - interactive",
             'p[url]': getShareURL(),
-            'p[images][0]': 'http://placehold.it/960x500'
+            'p[images][0]': 'http://static.guim.co.uk/sys-images/guardian/Pix/pictures/2014/1/9/1389269451064/Syrian-women-past-the-des-001.jpg'
         };
 
         openShareWindow('http://www.facebook.com/sharer.php?s=100&', options);
