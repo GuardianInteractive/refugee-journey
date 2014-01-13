@@ -1,7 +1,7 @@
 {
   "name": "refugee-choices-interactive",
   "version": "0.0.1",
-  "remotePath": "http://interactive.guim.co.uk/global-development/ng-interactive/2014/jan/refugee-choices-interactive/",
+  "remotePath": "http://interactive.guim.co.uk/next-gen/global-development/ng-interactive/2014/jan/refugee-choices-interactive/",
   "gucomurl": "/global-development/ng-interactive/2014/jan/refugee-choices-interactive",
   "S3Path": "next-gen/global-development/ng-interactive/2014/jan/refugee-choices-interactive/",
   "devDependencies": {
