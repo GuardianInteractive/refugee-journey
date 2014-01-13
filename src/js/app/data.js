@@ -61,7 +61,7 @@ JOURNEY.data = {
             text: 'You have new choices to make. You can stay in Turkey and hope for resettlement through the UNHCR resettlement programme, which moves refugees directly into European countries with full support to build a new life. Or you can take a dangerous route overland into the EU and apply for asylum once there.',
             options: [
                 { text: 'Apply for resettlement', destination: 's5'},
-                { text: 'Push on alone', destination: 's6' }
+                { text: 'Head for the EU', destination: 's6' }
             ]
         }
     },
