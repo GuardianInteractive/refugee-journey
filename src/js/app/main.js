@@ -5,6 +5,7 @@ JOURNEY.Game = function(el) {
     var sceneContainerEl;
     var currentScene;
     var cachedImages = [];
+    var firstTime = true;
 
     function Player() {
         return {
@@ -78,9 +79,11 @@ JOURNEY.Game = function(el) {
 
         // Animate new scene into view
         jQuery('html, body').stop();
-        jQuery('html, body').animate({
-            scrollTop: sceneEl.offset().top
-        }, 800);
+        if (!firstTime) {
+            jQuery('html, body').animate({
+                scrollTop: sceneEl.offset().top
+            }, 800);
+        }
 
         if (scene.end === true) {
             player.success = scene.success;
@@ -89,6 +92,7 @@ JOURNEY.Game = function(el) {
         }
 
         updatePlayer();
+        firstTime = false;
     }
 
     function loadScenes(scenes) {
@@ -127,9 +131,9 @@ JOURNEY.Game = function(el) {
 
     function getShareURL() {
         var shareURL = 'http://example.com/share/example/';
-        if (player.scenes.length > 0) {
-            shareURL += '?journey=' + encodeURIComponent(player.scenes.join(','));
-        }
+        // if (player.scenes.length > 0) {
+        //     shareURL += '?journey=' + encodeURIComponent(player.scenes.join(','));
+        // }
         return shareURL;
     }
 
