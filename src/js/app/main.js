@@ -1,3 +1,5 @@
+/* global Image,jQuery,window */
+
 var JOURNEY = JOURNEY || {};
 JOURNEY.Game = function(el) {
     'use strict';
@@ -111,6 +113,7 @@ JOURNEY.Game = function(el) {
     }
 
     function clickedChoice(elm) {
+        jQuery(elm).addClass('picked');
         currentScene = jQuery(elm).data('destination');
         render();
     }
