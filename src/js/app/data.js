@@ -84,7 +84,7 @@ JOURNEY.data = {
     },
 
     s51: {
-        title: 'Staying in Turkey s51',
+        title: 'Staying in Turkey',
         coverImg: 'http://static.guim.co.uk/sys-images/guardian/Pix/pictures/2014/1/7/1389113268437/Syrians-in-a-refugee-camp-001.jpg',
         coverCredit : 'Photograph: Christian Marquardt/Getty Images ',
         insertImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/1/13/1389608618658/AleppomapforFortressEurope.png',
@@ -203,7 +203,7 @@ JOURNEY.data = {
         insertImg: 'http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/1/13/1389608619723/PatrasmapforFortressEurope.png',
         asset: 'start',
         choice: {
-            text: '1. Claim asylum in Italy (Go to s 15) 2. You are in the Schengen zone now so you think it’s worth just travelling forward to Sweden overland, avoiding the Italian authorities. (Go to s 16)?',
+            text: 'You could claim asylum in Italy. Or, since you are in the Schengen zone now, you might decide it’s worth just travelling forward to Sweden overland, avoiding the Italian authorities.',
             options: [
                 { text: 'Claim asylum', destination: 's15'},
                 { text: 'Push on to Sweden', destination: 's16' }
